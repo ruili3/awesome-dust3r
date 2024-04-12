@@ -81,6 +81,8 @@ While novel view synthesis (NVS) has made substantial progress in 3D computer vi
 ## Blog Posts
 
 1. [3D reconstruction models made easy](https://europe.naverlabs.com/blog/3d-reconstruction-models-made-easy/)
+2. [InstantSplat: Sub Minute Gaussian Splatting](https://radiancefields.com/instantsplat-sub-minute-gaussian-splatting/)
+
 
 ## Tutorial Videos
 1. [Advanced Image-to-3D AI, DUSt3R](https://www.youtube.com/watch?v=kI7wCEAFFb0)
