@@ -2,7 +2,7 @@
 <h1>Awesome DUSt3R Resources </h1>
 </div>
 
-A curated list of papers and open-source resources related to DUSt3R, an emgering geometric fundation model enpowering a wide span of 3D geometry tasks & applications. PR requests are welcomed, including papers, open-source libraries, blog posts, and videos, etc.
+A curated list of papers and open-source resources related to DUSt3R, an emerging geometric foundation model enpowering a wide span of 3D geometry tasks & applications. PR requests are welcomed, including papers, open-source libraries, blog posts, and videos, etc.
 
 ## Table of contents
 
