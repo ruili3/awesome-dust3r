@@ -11,9 +11,6 @@ A curated list of papers and open-source resources related to DUSt3R, an emergin
 <br>
 
 - [Gaussian Splatting](#gaussian-splatting)
-
-<br>
-
 - [Robotics](#robotics)
 
 <br>
