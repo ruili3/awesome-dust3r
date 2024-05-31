@@ -2,7 +2,7 @@
 <h1>Awesome DUSt3R Resources </h1>
 </div>
 
-A curated list of papers and open-source resources related to DUSt3R, an emerging geometric foundation model empowering a wide span of 3D geometry tasks & applications. PR requests are welcomed, including papers, open-source libraries, blog posts, videos, etc.
+A curated list of papers and open-source resources related to DUSt3R, an emerging geometric foundation model empowering a wide span of 3D geometry tasks & applications. PR requests are welcomed, including papers, open-source libraries, blog posts, videos, etc. Repo maintained by [@Rui Li](https://x.com/leedaray), stay tuned for updates!
 
 ## Table of contents
 
@@ -16,6 +16,7 @@ A curated list of papers and open-source resources related to DUSt3R, an emergin
 
 <br>
 
+- [Related Codebase](#related-codebase)
 - [Blog Posts](#blog-posts)
 - [Tutorial Videos](#tutorial-videos)
 - [Acknowledgements](#acknowledgements)
@@ -23,10 +24,13 @@ A curated list of papers and open-source resources related to DUSt3R, an emergin
 
 <details span>
 <summary><b>Update Log:</b></summary>
-<br>
 
-**Apr 9, 2024**: Initial list with first 3 papers, blogs and videos. <br>
+**May 31, 2024**: Add a concurrent work Detector-free SfM and a Mini-DUSt3R codebase.
+<br>
 **Apr 27, 2024**: Add concurrent works including FlowMap, ACE0, MicKey, and VGGSfM.
+<br>
+**Apr 09, 2024**: Initial list with first 3 papers, blogs and videos. 
+
 </details>
 <br>
 
@@ -88,7 +92,6 @@ This paper introduces FlowMap, an end-to-end differentiable method that solves f
 
 <br>
 
-
 ### 2. Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer ![](https://img.shields.io/badge/2024-arXiv-red)
 **Authors**: Eric Brachmann, Jamie Wynn, Shuai Chen, Tommaso Cavallari, Áron Monszpart, Daniyar Turmukhambetov, Victor Adrian Prisacariu
 
@@ -100,8 +103,6 @@ We address the task of estimating camera parameters from a set of images depicti
  [📃 Paper](https://arxiv.org/pdf/2404.14351) | [🌐 Project Page](https://nianticlabs.github.io/acezero/) | [⌨️ Code](https://github.com/nianticlabs/acezero)
 
 <br>
-
-
 
 ### 3. Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences ![](https://img.shields.io/badge/2024-CVPR-green)
 **Authors**: Axel Barroso-Laguna, Sowmya Munukutla, Victor Adrian Prisacariu, Eric Brachmann
@@ -115,7 +116,6 @@ Given two images, we can estimate the relative camera pose between them by estab
 
 <br>
 
-
 ### 4. VGGSfM: Visual Geometry Grounded Deep Structure From Motion ![](https://img.shields.io/badge/2024-CVPR-green)
 **Authors**: Jianyuan Wang, Nikita Karaev, Christian Rupprecht, David Novotny
 
@@ -128,6 +128,17 @@ Structure-from-motion (SfM) is a long-standing problem in the computer vision co
 
 <br>
 
+### 5. Detector-Free Structure from Motion ![](https://img.shields.io/badge/2024-CVPR-green)
+**Authors**: Xingyi He, Jiaming Sun, Yifan Wang, Sida Peng, Qixing Huang, Hujun Bao, Xiaowei Zhou
+
+<details span>
+<summary><b>Abstract</b></summary>
+We propose a new structure-from-motion framework to recover accurate camera poses and point clouds from unordered images. Traditional SfM systems typically rely on the successful detection of repeatable keypoints across multiple views as the first step, which is difficult for texture-poor scenes, and poor keypoint detection may break down the whole SfM system. We propose a new detector-free SfM framework to draw benefits from the recent success of detector-free matchers to avoid the early determination of keypoints, while solving the multi-view inconsistency issue of detector-free matchers. Specifically, our framework first reconstructs a coarse SfM model from quantized detector-free matches. Then, it refines the model by a novel iterative refinement pipeline, which iterates between an attention-based multi-view matching module to refine feature tracks and a geometry refinement module to improve the reconstruction accuracy. Experiments demonstrate that the proposed framework outperforms existing detector-based SfM systems on common benchmark datasets. We also collect a texture-poor SfM dataset to demonstrate the capability of our framework to reconstruct texture-poor scenes. Based on this framework, we take first place in Image Matching Challenge 2023.
+</details>
+  
+ [📃 Paper](https://arxiv.org/pdf/2306.15669) | [🌐 Project Page](https://zju3dv.github.io/DetectorFreeSfM/) | [⌨️ Code](https://github.com/zju3dv/DetectorFreeSfM)
+
+<br>
 
 
 
@@ -156,6 +167,11 @@ However, recent advances in computer vision have led to the development of 3D fo
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2404.11683.pdf) | [💻 Code (to be released)]()
+
+
+
+## Related Codebase
+1. [Mini-DUSt3R](https://github.com/pablovela5620/mini-dust3r): A miniature version of dust3r only for performing inference. May, 2024.
 
 ## Blog Posts
 
