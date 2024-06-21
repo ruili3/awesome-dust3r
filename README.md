@@ -25,6 +25,8 @@ A curated list of papers and open-source resources related to DUSt3R, an emergin
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Jun 21, 2024**: Add the newly released MASt3R.
+<br>
 **May 31, 2024**: Add a concurrent work Detector-free SfM and a Mini-DUSt3R codebase.
 <br>
 **Apr 27, 2024**: Add concurrent works including FlowMap, ACE0, MicKey, and VGGSfM.
@@ -48,7 +50,19 @@ Multi-view stereo reconstruction (MVS) in the wild requires to first estimate th
 <br>
 
 
-### 2. CroCo: Self-Supervised Pre-training for 3D Vision Tasks by Cross-View Completion ![](https://img.shields.io/badge/2022-Neurips-blue)
+### 2. Grounding Image Matching in 3D with MASt3R ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Vincent Leroy, Yohann Cabon, Jérôme Revaud
+
+<details span>
+<summary><b>Abstract</b></summary>
+Image Matching is a core component of all best-performing algorithms and pipelines in 3D vision. Yet despite matching being fundamentally a 3D problem, intrinsically linked to camera pose and scene geometry, it is typically treated as a 2D problem. This makes sense as the goal of matching is to establish correspondences between 2D pixel fields, but also seems like a potentially hazardous choice. In this work, we take a different stance and propose to cast matching as a 3D task with DUSt3R, a recent and powerful 3D reconstruction framework based on Transformers. Based on pointmaps regression, this method displayed impressive robustness in matching views with extreme viewpoint changes, yet with limited accuracy. We aim here to improve the matching capabilities of such an approach while preserving its robustness. We thus propose to augment the DUSt3R network with a new head that outputs dense local features, trained with an additional matching loss. We further address the issue of quadratic complexity of dense matching, which becomes prohibitively slow for downstream applications if not carefully treated. We introduce a fast reciprocal matching scheme that not only accelerates matching by orders of magnitude, but also comes with theoretical guarantees and, lastly, yields improved results. Extensive experiments show that our approach, coined MASt3R, significantly outperforms the state of the art on multiple matching tasks. In particular, it beats the best published methods by 30% (absolute improvement) in VCRE AUC on the extremely challenging Map-free localization dataset.
+</details>
+  
+ [📃 Paper](https://arxiv.org/pdf/2406.09756) | [🌐 Project Page (to be released)](https://arxiv.org/pdf/2406.09756) | [⌨️ Code (to be released)](https://github.com/naver/mast3r)
+
+<br>
+
+### 3. CroCo: Self-Supervised Pre-training for 3D Vision Tasks by Cross-View Completion ![](https://img.shields.io/badge/2022-Neurips-blue)
 **Authors**: Philippe Weinzaepfel, Vincent Leroy, Thomas Lucas, Romain Brégier, Yohann Cabon, Vaibhav Arora, Leonid Antsfeld, Boris Chidlovskii, Gabriela Csurka, Jérôme Revaud
 
 <details span>
@@ -61,7 +75,7 @@ Masked Image Modeling (MIM) has recently been established as a potent pre-traini
 <br>
 
 
-### 3. CroCo v2: Improved Cross-view Completion Pre-training for Stereo Matching and Optical Flow ![](https://img.shields.io/badge/2023-ICCV-f5cac3)
+### 4. CroCo v2: Improved Cross-view Completion Pre-training for Stereo Matching and Optical Flow ![](https://img.shields.io/badge/2023-ICCV-f5cac3)
 **Authors**: Philippe Weinzaepfel, Thomas Lucas, Vincent Leroy, Yohann Cabon, Vaibhav Arora, Romain Brégier, Gabriela Csurka, Leonid Antsfeld, Boris Chidlovskii, Jérôme Revaud
 
 <details span>
