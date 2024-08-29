@@ -2,7 +2,7 @@
 <h1>Awesome DUSt3R Resources </h1>
 </div>
 
-A curated list of papers and open-source resources related to DUSt3R, an emerging geometric foundation model empowering a wide span of 3D geometry tasks & applications. PR requests are welcomed, including papers, open-source libraries, blog posts, videos, etc. Repo maintained by [@Rui Li](https://x.com/leedaray), stay tuned for updates!
+A curated list of papers and open-source resources related to DUSt3R/MASt3R, the emerging geometric foundation models empowering a wide span of 3D geometry tasks & applications. PR requests are welcomed, including papers, open-source libraries, blog posts, videos, etc. Repo maintained by [@Rui Li](https://x.com/leedaray), stay tuned for updates!
 
 ## Table of contents
 
@@ -25,6 +25,8 @@ A curated list of papers and open-source resources related to DUSt3R, an emergin
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Aug 29, 2024**: Add Splatt3R, update the code of InstantSplat, etc.
+<br>
 **Jun 21, 2024**: Add the newly released MASt3R.
 <br>
 **May 31, 2024**: Add a concurrent work Detector-free SfM and a Mini-DUSt3R codebase.
@@ -86,8 +88,6 @@ Despite impressive performance for high-level downstream tasks, self-supervised 
  [📃 Paper](https://arxiv.org/abs/2211.10408) | [🌐 Project Page](https://croco.europe.naverlabs.com/public/index.html) | [⌨️ Code](https://github.com/naver/croco)
 
 <br>
-
-
 
 
 
@@ -166,13 +166,26 @@ We propose a new structure-from-motion framework to recover accurate camera pose
 While novel view synthesis (NVS) has made substantial progress in 3D computer vision, it typically requires an initial estimation of camera intrinsics and extrinsics from dense viewpoints. This pre-processing is usually conducted via a Structure-from-Motion (SfM) pipeline, a procedure that can be slow and unreliable, particularly in sparse-view scenarios with insufficient matched features for accurate reconstruction. In this work, we integrate the strengths of point-based representations (e.g., 3D Gaussian Splatting, 3D-GS) with end-to-end dense stereo models (DUSt3R) to tackle the complex yet unresolved issues in NVS under unconstrained settings, which encompasses pose-free and sparse view challenges. Our framework, InstantSplat, unifies dense stereo priors with 3D-GS to build 3D Gaussians of large-scale scenes from sparseview & pose-free images in less than 1 minute. Specifically, InstantSplat comprises a Coarse Geometric Initialization (CGI) module that swiftly establishes a preliminary scene structure and camera parameters across all training views, utilizing globally-aligned 3D point maps derived from a pre-trained dense stereo pipeline. This is followed by the Fast 3D-Gaussian Optimization (F-3DGO) module, which jointly optimizes the 3D Gaussian attributes and the initialized poses with pose regularization. Experiments conducted on the large-scale outdoor Tanks & Temples datasets demonstrate that InstantSplat significantly improves SSIM (by 32%) while concurrently reducing Absolute Trajectory Error (ATE) by 80%. These establish InstantSplat as a viable solution for scenarios involving posefree and sparse-view conditions. Project page: http://instantsplat.github.io/.
 </details>
 
-  [📄 Paper](https://arxiv.org/pdf/2403.20309.pdf) | [🌐 Project Page](https://instantsplat.github.io/) | [💻 Code (not yet)]() | [🎥 Video](https://www.youtube.com/watch?v=_9aQHLHHoEM&feature=youtu.be) 
+  [📄 Paper](https://arxiv.org/pdf/2403.20309.pdf) | [🌐 Project Page](https://instantsplat.github.io/) | [💻 Code](https://github.com/NVlabs/InstantSplat) | [🎥 Video](https://www.youtube.com/watch?v=_9aQHLHHoEM&feature=youtu.be) 
 
 <br>
 
+
+### 2. Splatt3R: Zero-shot Gaussian Splatting from Uncalibrated Image Pairs ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Brandon Smart, Chuanxia Zheng, Iro Laina, Victor Adrian Prisacariu
+<details span>
+<summary><b>Abstract</b></summary>
+In this paper, we introduce Splatt3R, a pose-free, feed-forward method for in-the-wild 3D reconstruction and novel view synthesis from stereo pairs. Given uncalibrated natural images, Splatt3R can predict 3D Gaussian Splats without requiring any camera parameters or depth information. For generalizability, we build Splatt3R upon a ``foundation'' 3D geometry reconstruction method, MASt3R, by extending it to deal with both 3D structure and appearance. Specifically, unlike the original MASt3R which reconstructs only 3D point clouds, we predict the additional Gaussian attributes required to construct a Gaussian primitive for each point. Hence, unlike other novel view synthesis methods, Splatt3R is first trained by optimizing the 3D point cloud's geometry loss, and then a novel view synthesis objective. By doing this, we avoid the local minima present in training 3D Gaussian Splats from stereo views. We also propose a novel loss masking strategy that we empirically find is critical for strong performance on extrapolated viewpoints. We train Splatt3R on the ScanNet++ dataset and demonstrate excellent generalisation to uncalibrated, in-the-wild images. Splatt3R can reconstruct scenes at 4FPS at 512 x 512 resolution, and the resultant splats can be rendered in real-time.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2408.13912) | [🌐 Project Page](https://splatt3r.active.vision/) | [💻 Code](https://github.com/btsmart/splatt3r)
+
+<br>
+
+
 ## Robotics:
 ## 2024:
-### 1. Unifying Scene Representation and Hand-Eye Calibration with 3D Foundation Models ![](https://img.shields.io/badge/2024-arXiv-red)
+### 1. Unifying Scene Representation and Hand-Eye Calibration with 3D Foundation Models ![](https://img.shields.io/badge/2024-RAL-yellow)
 **Authors**: Weiming Zhi, Haozhan Tang, Tianyi Zhang, Matthew Johnson-Roberson
 <details span>
 <summary><b>Abstract</b></summary>
@@ -182,7 +195,17 @@ However, recent advances in computer vision have led to the development of 3D fo
 
   [📄 Paper](https://arxiv.org/pdf/2404.11683.pdf) | [💻 Code (to be released)]()
 
+<br>
 
+### 2. 3D Foundation Models Enable Simultaneous Geometry and Pose Estimation of Grasped Objects ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Weiming Zhi, Haozhan Tang, Tianyi Zhang, Matthew Johnson-Roberson
+<details span>
+<summary><b>Abstract</b></summary>
+Humans have the remarkable ability to use held objects as tools to interact with their environment. For this to occur, humans internally estimate how hand movements affect the object’s movement. We wish to endow robots with this capability. We contribute methodology to jointly estimate the geometry and pose of objects grasped by a robot, from RGB images captured by an external camera. Notably, our method transforms the estimated geometry into the robot’s coordinate frame, while not requiring the extrinsic parameters of the external camera to be calibrated. Our approach leverages 3D foundation models, large models pre-trained on huge datasets for 3D vision tasks, to produce initial estimates of the in-hand object. These initial estimations do not have physically correct scales and are in the camera’s frame. Then, we formulate, and efficiently solve, a coordinate-alignment problem to recover accurate scales, along with a transformation of the objects to the coordinate frame of the robot. Forward kinematics mappings can subsequently be defined from the manipulator’s joint angles to specified points on the object. These mappings enable the estimation of points on the held object at arbitrary configurations, enabling robot motion to be designed with respect to coordinates on the grasped objects. We empirically evaluate our approach on a robot manipulator holding a diverse set of real-world objects.
+</details>
+
+[📄 Paper](https://www.researchgate.net/profile/Weiming-Zhi/publication/382490016_3D_Foundation_Models_Enable_Simultaneous_Geometry_and_Pose_Estimation_of_Grasped_Objects/links/66a01a4527b00e0ca43ddd95/3D-Foundation-Models-Enable-Simultaneous-Geometry-and-Pose-Estimation-of-Grasped-Objects.pdf)
+<br>
 
 ## Related Codebase
 1. [Mini-DUSt3R](https://github.com/pablovela5620/mini-dust3r): A miniature version of dust3r only for performing inference. May, 2024.
