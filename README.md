@@ -12,6 +12,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <br>
 
 - [Gaussian Splatting](#gaussian-splatting)
+- [3D Reconstruction](#3d-reconstruction)
 - [Robotics](#robotics)
 
 <br>
@@ -25,6 +26,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Aug 31, 2024**: Add Spurfies.
+<br>
 **Aug 29, 2024**: Add Splatt3R, update the code of InstantSplat, etc.
 <br>
 **Jun 21, 2024**: Add the newly released MASt3R.
@@ -182,6 +185,21 @@ In this paper, we introduce Splatt3R, a pose-free, feed-forward method for in-th
 
 <br>
 
+
+
+
+## 3D Reconstruction:
+## 2024:
+### 1. Spurfies: Sparse Surface Reconstruction using Local Geometry Priors ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Kevin Raj, Christopher Wewer, Raza Yunus, Eddy Ilg, Jan Eric Lenssen
+<details span>
+<summary><b>Abstract</b></summary>
+We introduce Spurfies, a novel method for sparse-view surface reconstruction that disentangles appearance and geometry information to utilize local geometry priors trained on synthetic data. Recent research heavily focuses on 3D reconstruction using dense multi-view setups, typically requiring hundreds of images. However, these methods often struggle with few-view scenarios. Existing sparse-view reconstruction techniques often rely on multi-view stereo networks that need to learn joint priors for geometry and appearance from a large amount of data. In contrast, we introduce a neural point representation that disentangles geometry and appearance to train a local geometry prior using a subset of the synthetic ShapeNet dataset only. During inference, we utilize this surface prior as additional constraint for surface and appearance reconstruction from sparse input views via differentiable volume rendering, restricting the space of possible solutions. We validate the effectiveness of our method on the DTU dataset and demonstrate that it outperforms previous state of the art by 35% in surface quality while achieving competitive novel view synthesis quality. Moreover, in contrast to previous works, our method can be applied to larger, unbounded scenes, such as Mip-NeRF 360.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2408.16544) | [🌐 Project Page](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html) | [💻 Code (coming soom)](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html)
+
+<br>
 
 ## Robotics:
 ## 2024:
