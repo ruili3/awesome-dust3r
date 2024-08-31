@@ -26,7 +26,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Aug 31, 2024**: Add Spurfies.
+**Aug 31, 2024**: Add Spurfies, Spann3R.
 <br>
 **Aug 29, 2024**: Add Splatt3R, update the code of InstantSplat, etc.
 <br>
@@ -198,6 +198,18 @@ We introduce Spurfies, a novel method for sparse-view surface reconstruction tha
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2408.16544) | [🌐 Project Page](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html) | [💻 Code (coming soom)](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html)
+
+<br>
+
+
+### 2. 3D Reconstruction with Spatial Memory ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Hengyi Wang, Lourdes Agapito
+<details span>
+<summary><b>Abstract</b></summary>
+We present Spann3R, a novel approach for dense 3D reconstruction from ordered or unordered image collections. Built on the DUSt3R paradigm, Spann3R uses a transformer-based architecture to directly regress pointmaps from images without any prior knowledge of the scene or camera parameters. Unlike DUSt3R, which predicts per image-pair pointmaps each expressed in its local coordinate frame, Spann3R can predict per-image pointmaps expressed in a global coordinate system, thus eliminating the need for optimization-based global alignment. The key idea of Spann3R is to manage an external spatial memory that learns to keep track of all previous relevant 3D information. Spann3R then queries this spatial memory to predict the 3D structure of the next frame in a global coordinate system. Taking advantage of DUSt3R's pre-trained weights, and further fine-tuning on a subset of datasets, Spann3R shows competitive performance and generalization ability on various unseen datasets and can process ordered image collections in real time.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2408.16061) | [🌐 Project Page](https://hengyiwang.github.io/projects/spanner) | [💻 Code (coming soom)](https://hengyiwang.github.io/projects/spanner)
 
 <br>
 
