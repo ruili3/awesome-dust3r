@@ -26,7 +26,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Aug 31, 2024**: Add Spurfies, Spann3R.
+**Aug 31, 2024**: Add Spurfies, Spann3R, and ReconX.
 <br>
 **Aug 29, 2024**: Add Splatt3R, update the code of InstantSplat, etc.
 <br>
@@ -212,6 +212,18 @@ We present Spann3R, a novel approach for dense 3D reconstruction from ordered or
   [📄 Paper](https://arxiv.org/pdf/2408.16061) | [🌐 Project Page](https://hengyiwang.github.io/projects/spanner) | [💻 Code (coming soom)](https://hengyiwang.github.io/projects/spanner)
 
 <br>
+
+### 3. ReconX: Reconstruct Any Scene from Sparse Views with Video Diffusion Model ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Fangfu Liu, Wenqiang Sun, Hanyang Wang, Yikai Wang, Haowen Sun, Junliang Ye, Jun Zhang, Yueqi Duan
+<details span>
+<summary><b>Abstract</b></summary>
+Advancements in 3D scene reconstruction have transformed 2D images from the real world into 3D models, producing realistic 3D results from hundreds of input photos. Despite great success in dense-view reconstruction scenarios, rendering a detailed scene from insufficient captured views is still an ill-posed optimization problem, often resulting in artifacts and distortions in unseen areas. In this paper, we propose ReconX, a novel 3D scene reconstruction paradigm that reframes the ambiguous reconstruction challenge as a temporal generation task. The key insight is to unleash the strong generative prior of large pre-trained video diffusion models for sparse-view reconstruction. However, 3D view consistency struggles to be accurately preserved in directly generated video frames from pre-trained models. To address this, given limited input views, the proposed ReconX first constructs a global point cloud and encodes it into a contextual space as the 3D structure condition. Guided by the condition, the video diffusion model then synthesizes video frames that are both detail-preserved and exhibit a high degree of 3D consistency, ensuring the coherence of the scene from various perspectives. Finally, we recover the 3D scene from the generated video through a confidence-aware 3D Gaussian Splatting optimization scheme. Extensive experiments on various real-world datasets show the superiority of our ReconX over state-of-the-art methods in terms of quality and generalizability.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2408.16767) | [🌐 Project Page](https://liuff19.github.io/ReconX/) | [💻 Code](https://github.com/liuff19/ReconX)
+
+<br>
+
 
 ## Robotics:
 ## 2024:
