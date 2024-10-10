@@ -13,6 +13,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 
 - [Gaussian Splatting](#gaussian-splatting)
 - [3D Reconstruction](#3d-reconstruction)
+- [Dynamic Scene Reconstruction](#dynamic-scene-reconstruction)
 - [Robotics](#robotics)
 
 <br>
@@ -26,6 +27,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Oct 10, 2024**: Add MASt3R-SfM, MonST3R.
+<br>
 **Aug 31, 2024**: Add Spurfies, Spann3R, and ReconX.
 <br>
 **Aug 29, 2024**: Add Splatt3R, update the code of InstantSplat, etc.
@@ -63,11 +66,24 @@ Multi-view stereo reconstruction (MVS) in the wild requires to first estimate th
 Image Matching is a core component of all best-performing algorithms and pipelines in 3D vision. Yet despite matching being fundamentally a 3D problem, intrinsically linked to camera pose and scene geometry, it is typically treated as a 2D problem. This makes sense as the goal of matching is to establish correspondences between 2D pixel fields, but also seems like a potentially hazardous choice. In this work, we take a different stance and propose to cast matching as a 3D task with DUSt3R, a recent and powerful 3D reconstruction framework based on Transformers. Based on pointmaps regression, this method displayed impressive robustness in matching views with extreme viewpoint changes, yet with limited accuracy. We aim here to improve the matching capabilities of such an approach while preserving its robustness. We thus propose to augment the DUSt3R network with a new head that outputs dense local features, trained with an additional matching loss. We further address the issue of quadratic complexity of dense matching, which becomes prohibitively slow for downstream applications if not carefully treated. We introduce a fast reciprocal matching scheme that not only accelerates matching by orders of magnitude, but also comes with theoretical guarantees and, lastly, yields improved results. Extensive experiments show that our approach, coined MASt3R, significantly outperforms the state of the art on multiple matching tasks. In particular, it beats the best published methods by 30% (absolute improvement) in VCRE AUC on the extremely challenging Map-free localization dataset.
 </details>
   
- [📃 Paper](https://arxiv.org/pdf/2406.09756) | [🌐 Project Page (to be released)](https://arxiv.org/pdf/2406.09756) | [⌨️ Code (to be released)](https://github.com/naver/mast3r)
+ [📃 Paper](https://arxiv.org/pdf/2406.09756) | [🌐 Project Page (to be released)](https://arxiv.org/pdf/2406.09756) | [⌨️ Code](https://github.com/naver/mast3r)
 
 <br>
 
-### 3. CroCo: Self-Supervised Pre-training for 3D Vision Tasks by Cross-View Completion ![](https://img.shields.io/badge/2022-Neurips-blue)
+
+### 3. MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Bardienus Duisterhof, Lojze Zust, Philippe Weinzaepfel, Vincent Leroy, Yohann Cabon, Jerome Revaud
+
+<details span>
+<summary><b>Abstract</b></summary>
+Structure-from-Motion (SfM), a task aiming at jointly recovering camera poses and 3D geometry of a scene given a set of images, remains a hard problem with still many open challenges despite decades of significant progress. The traditional solution for SfM consists of a complex pipeline of minimal solvers which tends to propagate errors and fails when images do not sufficiently overlap, have too little motion, etc. Recent methods have attempted to revisit this paradigm, but we empirically show that they fall short of fixing these core issues. In this paper, we propose instead to build upon a recently released foundation model for 3D vision that can robustly produce local 3D reconstructions and accurate matches. We introduce a low-memory approach to accurately align these local reconstructions in a global coordinate system. We further show that such foundation models can serve as efficient image retrievers without any overhead, reducing the overall complexity from quadratic to linear. Overall, our novel SfM pipeline is simple, scalable, fast and truly unconstrained, i.e. it can handle any collection of images, ordered or not. Extensive experiments on multiple benchmarks show that our method provides steady performance across diverse settings, especially outperforming existing methods in small- and medium-scale settings.
+</details>
+  
+ [📃 Paper](https://arxiv.org/pdf/2409.19152) | [🌐 Project Page](https://github.com/naver/mast3r) | [⌨️ Code](https://github.com/naver/mast3r)
+
+<br>
+
+### 4. CroCo: Self-Supervised Pre-training for 3D Vision Tasks by Cross-View Completion ![](https://img.shields.io/badge/2022-Neurips-blue)
 **Authors**: Philippe Weinzaepfel, Vincent Leroy, Thomas Lucas, Romain Brégier, Yohann Cabon, Vaibhav Arora, Leonid Antsfeld, Boris Chidlovskii, Gabriela Csurka, Jérôme Revaud
 
 <details span>
@@ -80,7 +96,7 @@ Masked Image Modeling (MIM) has recently been established as a potent pre-traini
 <br>
 
 
-### 4. CroCo v2: Improved Cross-view Completion Pre-training for Stereo Matching and Optical Flow ![](https://img.shields.io/badge/2023-ICCV-f5cac3)
+### 5. CroCo v2: Improved Cross-view Completion Pre-training for Stereo Matching and Optical Flow ![](https://img.shields.io/badge/2023-ICCV-f5cac3)
 **Authors**: Philippe Weinzaepfel, Thomas Lucas, Vincent Leroy, Yohann Cabon, Vaibhav Arora, Romain Brégier, Gabriela Csurka, Leonid Antsfeld, Boris Chidlovskii, Jérôme Revaud
 
 <details span>
@@ -91,7 +107,6 @@ Despite impressive performance for high-level downstream tasks, self-supervised 
  [📃 Paper](https://arxiv.org/abs/2211.10408) | [🌐 Project Page](https://croco.europe.naverlabs.com/public/index.html) | [⌨️ Code](https://github.com/naver/croco)
 
 <br>
-
 
 
 
@@ -221,6 +236,21 @@ Advancements in 3D scene reconstruction have transformed 2D images from the real
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2408.16767) | [🌐 Project Page](https://liuff19.github.io/ReconX/) | [💻 Code](https://github.com/liuff19/ReconX)
+
+<br>
+
+
+
+## Dynamic Scene Reconstruction:
+## 2024:
+### 1. MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Junyi Zhang, Charles Herrmann, Junhwa Hur, Varun Jampani, Trevor Darrell, Forrester Cole, Deqing Sun, Ming-Hsuan Yang
+<details span>
+<summary><b>Abstract</b></summary>
+Estimating geometry from dynamic scenes, where objects move and deform over time, remains a core challenge in computer vision. Current approaches often rely on multi-stage pipelines or global optimizations that decompose the problem into subtasks, like depth and flow, leading to complex systems prone to errors. In this paper, we present Motion DUSt3R (MonST3R), a novel geometry-first approach that directly estimates per-timestep geometry from dynamic scenes. Our key insight is that by simply estimating a pointmap for each timestep, we can effectively adapt DUST3R's representation, previously only used for static scenes, to dynamic scenes. However, this approach presents a significant challenge: the scarcity of suitable training data, namely dynamic, posed videos with depth labels. Despite this, we show that by posing the problem as a fine-tuning task, identifying several suitable datasets, and strategically training the model on this limited data, we can surprisingly enable the model to handle dynamics, even without an explicit motion representation. Based on this, we introduce new optimizations for several downstream video-specific tasks and demonstrate strong performance on video depth and camera pose estimation, outperforming prior work in terms of robustness and efficiency. Moreover, MonST3R shows promising results for primarily feed-forward 4D reconstruction.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2410.03825) | [🌐 Project Page](https://monst3r-project.github.io/) | [💻 Code](https://github.com/Junyi42/monst3r)
 
 <br>
 
