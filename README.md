@@ -203,6 +203,34 @@ In this paper, we introduce Splatt3R, a pose-free, feed-forward method for in-th
 
 
 
+### 3. Dense Point Clouds Matter: Dust-GS for Scene Reconstruction from Sparse Viewpoints ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Shan Chen, Jiale Zhou, Lei Li
+<details span>
+<summary><b>Abstract</b></summary>
+3D Gaussian Splatting (3DGS) has demonstrated remarkable performance in scene synthesis and novel view synthesis tasks. Typically, the initialization of 3D Gaussian primitives relies on point clouds derived from Structure-from-Motion (SfM) methods. However, in scenarios requiring scene reconstruction from sparse viewpoints, the effectiveness of 3DGS is significantly constrained by the quality of these initial point clouds and the limited number of input images. In this study, we present Dust-GS, a novel framework specifically designed to overcome the limitations of 3DGS in sparse viewpoint conditions. Instead of relying solely on SfM, Dust-GS introduces an innovative point cloud initialization technique that remains effective even with sparse input data. Our approach leverages a hybrid strategy that integrates an adaptive depth-based masking technique, thereby enhancing the accuracy and detail of reconstructed scenes. Extensive experiments conducted on several benchmark datasets demonstrate that Dust-GS surpasses traditional 3DGS methods in scenarios with sparse viewpoints, achieving superior scene reconstruction quality with a reduced number of input images.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2409.08613)
+
+<br>
+
+
+
+### 4. LM-Gaussian: Boost Sparse-view 3D Gaussian Splatting with Large Model Priors ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Hanyang Yu, Xiaoxiao Long, Ping Tan
+<details span>
+<summary><b>Abstract</b></summary>
+We aim to address sparse-view reconstruction of a 3D scene by leveraging priors from large-scale vision models. While recent advancements such as 3D Gaussian Splatting (3DGS) have demonstrated remarkable successes in 3D reconstruction, these methods typically necessitate hundreds of input images that densely capture the underlying scene, making them time-consuming and impractical for real-world applications. However, sparse-view reconstruction is inherently ill-posed and under-constrained, often resulting in inferior and incomplete outcomes. This is due to issues such as failed initialization, overfitting on input images, and a lack of details. To mitigate these challenges, we introduce LM-Gaussian, a method capable of generating high-quality reconstructions from a limited number of images. Specifically, we propose a robust initialization module that leverages stereo priors to aid in the recovery of camera poses and the reliable point clouds. Additionally, a diffusion-based refinement is iteratively applied to incorporate image diffusion priors into the Gaussian optimization process to preserve intricate scene details. Finally, we utilize video diffusion priors to further enhance the rendered images for realistic visual effects. Overall, our approach significantly reduces the data acquisition requirements compared to previous 3DGS methods. We validate the effectiveness of our framework through experiments on various public datasets, demonstrating its potential for high-quality 360-degree scene reconstruction. Visual results are on our website.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2409.03456) | [🌐 Project Page](https://hanyangyu1021.github.io/lm-gaussian.github.io/) | [💻 Code](https://github.com/hanyangyu1021/LMGaussian)
+
+<br>
+
+
+
+
+
 ## 3D Reconstruction:
 ## 2024:
 ### 1. Spurfies: Sparse Surface Reconstruction using Local Geometry Priors ![](https://img.shields.io/badge/2024-arXiv-red)
