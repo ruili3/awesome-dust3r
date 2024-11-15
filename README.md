@@ -14,6 +14,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 - [Gaussian Splatting](#gaussian-splatting)
 - [3D Reconstruction](#3d-reconstruction)
 - [Dynamic Scene Reconstruction](#dynamic-scene-reconstruction)
+- [Scene Understanding](#scene-understanding)
 - [Robotics](#robotics)
 
 <br>
@@ -27,6 +28,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Nov 15, 2024**: Add MoGe, LSM.
+<br>
 **Oct 10, 2024**: Add MASt3R-SfM, MonST3R.
 <br>
 **Aug 31, 2024**: Add Spurfies, Spann3R, and ReconX.
@@ -269,6 +272,20 @@ Advancements in 3D scene reconstruction have transformed 2D images from the real
 
 
 
+
+### 4. MoGe: Unlocking Accurate Monocular Geometry Estimation for Open-Domain Images with Optimal Training Supervision ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Ruicheng Wang, Sicheng Xu, Cassie Dai, Jianfeng Xiang, Yu Deng, Xin Tong, Jiaolong Yang
+<details span>
+<summary><b>Abstract</b></summary>
+We present MoGe, a powerful model for recovering 3D geometry from monocular open-domain images. Given a single image, our model directly predicts a 3D point map of the captured scene with an affine-invariant representation, which is agnostic to true global scale and shift. This new representation precludes ambiguous supervision in training and facilitate effective geometry learning. Furthermore, we propose a set of novel global and local geometry supervisions that empower the model to learn high-quality geometry. These include a robust, optimal, and efficient point cloud alignment solver for accurate global shape learning, and a multi-scale local geometry loss promoting precise local geometry supervision. We train our model on a large, mixed dataset and demonstrate its strong generalizability and high accuracy. In our comprehensive evaluation on diverse unseen datasets, our model significantly outperforms state-of-the-art methods across all tasks, including monocular estimation of 3D point map, depth map, and camera field of view. Code and models will be released on our project page.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2410.19115) | [🌐 Project Page](https://wangrc.site/MoGePage/) | [💻 Code](https://github.com/microsoft/moge) | [🎮 Demo](https://huggingface.co/spaces/Ruicheng/MoGe)
+
+
+<br>
+
+
 ## Dynamic Scene Reconstruction:
 ## 2024:
 ### 1. MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion ![](https://img.shields.io/badge/2024-arXiv-red)
@@ -281,6 +298,22 @@ Estimating geometry from dynamic scenes, where objects move and deform over time
   [📄 Paper](https://arxiv.org/pdf/2410.03825) | [🌐 Project Page](https://monst3r-project.github.io/) | [💻 Code](https://github.com/Junyi42/monst3r)
 
 <br>
+
+
+
+
+
+## Scene Understanding:
+## 2024:
+### 1. LargeSpatialModel: End-to-end Unposed Images to Semantic 3D ![](https://img.shields.io/badge/2024-Neurips-blue)
+**Authors**: Zhiwen Fan, Jian Zhang, Wenyan Cong, Peihao Wang, Renjie Li, Kairun Wen, Shijie Zhou, Achuta Kadambi, Zhangyang Wang, Danfei Xu, Boris Ivanovic, Marco Pavone, Yue Wang
+<details span>
+<summary><b>Abstract</b></summary>
+Reconstructing and understanding 3D structures from a limited number of images is a well-established problem in computer vision. Traditional methods usually break this task into multiple subtasks, each requiring complex transformations between different data representations. For instance, dense reconstruction through Structure-from-Motion (SfM) involves converting images into key points, optimizing camera parameters, and estimating structures. Afterward, accurate sparse reconstructions are required for further dense modeling, which is subsequently fed into task-specific neural networks. This multi-step process results in considerable processing time and increased engineering complexity.
+In this work, we present the Large Spatial Model (LSM), which processes unposed RGB images directly into semantic radiance fields. LSM simultaneously estimates geometry, appearance, and semantics in a single feed-forward operation, and it can generate versatile label maps by interacting with language at novel viewpoints. Leveraging a Transformer-based architecture, LSM integrates global geometry through pixel-aligned point maps. To enhance spatial attribute regression, we incorporate local context aggregation with multi-scale fusion, improving the accuracy of fine local details. To tackle the scarcity of labeled 3D semantic data and enable natural language-driven scene manipulation, we incorporate a pre-trained 2D language-based segmentation model into a 3D-consistent semantic feature field. An efficient decoder then parameterizes a set of semantic anisotropic Gaussians, facilitating supervised end-to-end learning. Extensive experiments across various tasks show that LSM unifies multiple 3D vision tasks directly from unposed images, achieving real-time semantic 3D reconstruction for the first time.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2410.18956) | [💻 Code (to be released)]() | [🌐 Project Page](https://largespatialmodel.github.io/) | [🎮 Demo](https://huggingface.co/spaces/kairunwen/LSM)
 
 
 ## Robotics:
