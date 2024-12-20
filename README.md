@@ -28,7 +28,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Nov 15, 2024**: Add Align3R.
+**Dec 20, 2024**: Add Align3R.
 <br>
 **Nov 15, 2024**: Add MoGe, LSM.
 <br>
