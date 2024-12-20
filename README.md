@@ -28,6 +28,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Dec 20, 2024**: Add Align3R.
+<br>
 **Nov 15, 2024**: Add MoGe, LSM.
 <br>
 **Oct 10, 2024**: Add MASt3R-SfM, MonST3R.
@@ -296,6 +298,17 @@ Estimating geometry from dynamic scenes, where objects move and deform over time
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2410.03825) | [🌐 Project Page](https://monst3r-project.github.io/) | [💻 Code](https://github.com/Junyi42/monst3r)
+
+<br>
+
+### 2. Align3R: Aligned Monocular Depth Estimation for Dynamic Videos ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Jiahao Lu, Tianyu Huang, Peng Li, Zhiyang Dou, Cheng Lin, Zhiming Cui, Zhen Dong, Sai-Kit Yeung, Wenping Wang, Yuan Liu
+<details span>
+<summary><b>Abstract</b></summary>
+Recent developments in monocular depth estimation methods enable high-quality depth estimation of single-view images but fail to estimate consistent video depth across different frames. Recent works address this problem by applying a video diffusion model to generate video depth conditioned on the input video, which is training-expensive and can only produce scale-invariant depth values without camera poses. In this paper, we propose a novel video-depth estimation method called Align3R to estimate temporal consistent depth maps for a dynamic video. Our key idea is to utilize the recent DUSt3R model to align estimated monocular depth maps of different timesteps. First, we fine-tune the DUSt3R model with additional estimated monocular depth as inputs for the dynamic scenes. Then, we apply optimization to reconstruct both depth maps and camera poses. Extensive experiments demonstrate that Align3R estimates consistent video depth and camera poses for a monocular video with superior performance than baseline methods.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.03079) | [🌐 Project Page](https://igl-hkust.github.io/Align3R.github.io/) | [💻 Code](https://github.com/jiah-cloud/Align3R)
 
 <br>
 
