@@ -28,7 +28,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Dec 20, 2024**: Add Align3R.
+**Dec 20, 2024**: Add Align3R, PeRF3R, MV-DUSt3R+, Stereo4D, SLAM3R, LoRA3D.
 <br>
 **Nov 15, 2024**: Add MoGe, LSM.
 <br>
@@ -235,6 +235,18 @@ We aim to address sparse-view reconstruction of a 3D scene by leveraging priors 
 
 
 
+### 5. PreF3R: Pose-Free Feed-Forward 3D Gaussian Splatting from Variable-length Image Sequence ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Zequn Chen, Jiezhi Yang, Heng Yang
+<details span>
+<summary><b>Abstract</b></summary>
+We present PreF3R, Pose-Free Feed-forward 3D Reconstruction from an image sequence of variable length. Unlike previous approaches, PreF3R removes the need for camera calibration and reconstructs the 3D Gaussian field within a canonical coordinate frame directly from a sequence of unposed images, enabling efficient novel-view rendering. We leverage DUSt3R's ability for pair-wise 3D structure reconstruction, and extend it to sequential multi-view input via a spatial memory network, eliminating the need for optimization-based global alignment. Additionally, PreF3R incorporates a dense Gaussian parameter prediction head, which enables subsequent novel-view synthesis with differentiable rasterization. This allows supervising our model with the combination of photometric loss and pointmap regression loss, enhancing both photorealism and structural accuracy. Given a sequence of ordered images, PreF3R incrementally reconstructs the 3D Gaussian field at 20 FPS, therefore enabling real-time novel-view rendering. Empirical experiments demonstrate that PreF3R is an effective solution for the challenging task of pose-free feed-forward novel-view synthesis, while also exhibiting robust generalization to unseen scenes.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2411.16877) | [🌐 Project Page](https://computationalrobotics.seas.harvard.edu/PreF3R/) | [💻 Code](https://github.com/ComputationalRobotics/PreF3R)
+
+<br>
+
+
 
 ## 3D Reconstruction:
 ## 2024:
@@ -287,6 +299,42 @@ We present MoGe, a powerful model for recovering 3D geometry from monocular open
 
 <br>
 
+### 5. MV-DUSt3R+: Single-Stage Scene Reconstruction from Sparse Views In 2 Seconds ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Ruicheng Wang, Sicheng Xu, Cassie Dai, Jianfeng Xiang, Yu Deng, Xin Tong, Jiaolong Yang
+<details span>
+<summary><b>Abstract</b></summary>
+Recent sparse multi-view scene reconstruction advances like DUSt3R and MASt3R no longer require camera calibration and camera pose estimation. However, they only process a pair of views at a time to infer pixel-aligned pointmaps. When dealing with more than two views, a combinatorial number of error prone pairwise reconstructions are usually followed by an expensive global optimization, which often fails to rectify the pairwise reconstruction errors. To handle more views, reduce errors, and improve inference time, we propose the fast single-stage feed-forward network MV-DUSt3R. At its core are multi-view decoder blocks which exchange information across any number of views while considering one reference view. To make our method robust to reference view selection, we further propose MV-DUSt3R+, which employs cross-reference-view blocks to fuse information across different reference view choices. To further enable novel view synthesis, we extend both by adding and jointly training Gaussian splatting heads. Experiments on multi-view stereo reconstruction, multi-view pose estimation, and novel view synthesis confirm that our methods improve significantly upon prior art. Code will be released.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.06974) | [🌐 Project Page](https://mv-dust3rp.github.io/) | [💻 Code (coming soon)](https://mv-dust3rp.github.io/)
+
+<br>
+
+
+### 6. SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Yuzheng Liu, Siyan Dong, Shuzhe Wang, Yanchao Yang, Qingnan Fan, Baoquan Chen
+<details span>
+<summary><b>Abstract</b></summary>
+In this paper, we introduce SLAM3R, a novel and effective monocular RGB SLAM system for real-time and high-quality dense 3D reconstruction. SLAM3R provides an end-to-end solution by seamlessly integrating local 3D reconstruction and global coordinate registration through feed-forward neural networks. Given an input video, the system first converts it into overlapping clips using a sliding window mechanism. Unlike traditional pose optimization-based methods, SLAM3R directly regresses 3D pointmaps from RGB images in each window and progressively aligns and deforms these local pointmaps to create a globally consistent scene reconstruction - all without explicitly solving any camera parameters. Experiments across datasets consistently show that SLAM3R achieves state-of-the-art reconstruction accuracy and completeness while maintaining real-time performance at 20+ FPS. Code and weights at: this https URL.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.09401) | [💻 Code](https://github.com/PKU-VCL-3DV/SLAM3R)
+
+<br>
+
+
+
+### 7. LoRA3D: Low-Rank Self-Calibration of 3D Geometric Foundation Models ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Ziqi Lu, Heng Yang, Danfei Xu, Boyi Li, Boris Ivanovic, Marco Pavone, Yue Wang
+<details span>
+<summary><b>Abstract</b></summary>
+Emerging 3D geometric foundation models, such as DUSt3R, offer a promising approach for in-the-wild 3D vision tasks. However, due to the high-dimensional nature of the problem space and scarcity of high-quality 3D data, these pre-trained models still struggle to generalize to many challenging circumstances, such as limited view overlap or low lighting. To address this, we propose LoRA3D, an efficient self-calibration pipeline to specialize the pre-trained models to target scenes using their own multi-view predictions. Taking sparse RGB images as input, we leverage robust optimization techniques to refine multi-view predictions and align them into a global coordinate frame. In particular, we incorporate prediction confidence into the geometric optimization process, automatically re-weighting the confidence to better reflect point estimation accuracy. We use the calibrated confidence to generate high-quality pseudo labels for the calibrating views and use low-rank adaptation (LoRA) to fine-tune the models on the pseudo-labeled data. Our method does not require any external priors or manual labels. It completes the self-calibration process on a single standard GPU within just 5 minutes. Each low-rank adapter requires only 18MB of storage. We evaluated our method on more than 160 scenes from the Replica, TUM and Waymo Open datasets, achieving up to 88% performance improvement on 3D reconstruction, multi-view pose estimation and novel-view rendering.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.07746)
+
+<br>
+
 
 ## Dynamic Scene Reconstruction:
 ## 2024:
@@ -312,6 +360,18 @@ Recent developments in monocular depth estimation methods enable high-quality de
 
 <br>
 
+
+
+### 3. Stereo4D: Learning How Things Move in 3D from Internet Stereo Videos ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Linyi Jin, Richard Tucker, Zhengqi Li, David Fouhey, Noah Snavely, Aleksander Holynski
+<details span>
+<summary><b>Abstract</b></summary>
+Learning to understand dynamic 3D scenes from imagery is crucial for applications ranging from robotics to scene reconstruction. Yet, unlike other problems where large-scale supervised training has enabled rapid progress, directly supervising methods for recovering 3D motion remains challenging due to the fundamental difficulty of obtaining ground truth annotations. We present a system for mining high-quality 4D reconstructions from internet stereoscopic, wide-angle videos. Our system fuses and filters the outputs of camera pose estimation, stereo depth estimation, and temporal tracking methods into high-quality dynamic 3D reconstructions. We use this method to generate large-scale data in the form of world-consistent, pseudo-metric 3D point clouds with long-term motion trajectories. We demonstrate the utility of this data by training a variant of DUSt3R to predict structure and 3D motion from real-world image pairs, showing that training on our reconstructed data enables generalization to diverse real-world scenes. Project page: this https URL
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.09621) | [🌐 Project Page](https://stereo4d.github.io/) | [💻 Code (coming soon)](https://stereo4d.github.io/)
+
+<br>
 
 
 
