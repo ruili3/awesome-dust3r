@@ -28,6 +28,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Jan 24, 2025**: Add CUT3R, Fast3R, EasySplat, MEt3R, Dust-to-Tower. Happy New Year!
+<br>
 **Dec 20, 2024**: Add Align3R, PeRF3R, MV-DUSt3R+, Stereo4D, SLAM3R, LoRA3D.
 <br>
 **Nov 15, 2024**: Add MoGe, LSM.
@@ -71,7 +73,7 @@ Multi-view stereo reconstruction (MVS) in the wild requires to first estimate th
 Image Matching is a core component of all best-performing algorithms and pipelines in 3D vision. Yet despite matching being fundamentally a 3D problem, intrinsically linked to camera pose and scene geometry, it is typically treated as a 2D problem. This makes sense as the goal of matching is to establish correspondences between 2D pixel fields, but also seems like a potentially hazardous choice. In this work, we take a different stance and propose to cast matching as a 3D task with DUSt3R, a recent and powerful 3D reconstruction framework based on Transformers. Based on pointmaps regression, this method displayed impressive robustness in matching views with extreme viewpoint changes, yet with limited accuracy. We aim here to improve the matching capabilities of such an approach while preserving its robustness. We thus propose to augment the DUSt3R network with a new head that outputs dense local features, trained with an additional matching loss. We further address the issue of quadratic complexity of dense matching, which becomes prohibitively slow for downstream applications if not carefully treated. We introduce a fast reciprocal matching scheme that not only accelerates matching by orders of magnitude, but also comes with theoretical guarantees and, lastly, yields improved results. Extensive experiments show that our approach, coined MASt3R, significantly outperforms the state of the art on multiple matching tasks. In particular, it beats the best published methods by 30% (absolute improvement) in VCRE AUC on the extremely challenging Map-free localization dataset.
 </details>
   
- [📃 Paper](https://arxiv.org/pdf/2406.09756) | [🌐 Project Page (to be released)](https://arxiv.org/pdf/2406.09756) | [⌨️ Code](https://github.com/naver/mast3r)
+ [📃 Paper](https://arxiv.org/pdf/2406.09756) | [🌐 Project Page](https://europe.naverlabs.com/blog/mast3r-matching-and-stereo-3d-reconstruction/) | [⌨️ Code](https://github.com/naver/mast3r)
 
 <br>
 
@@ -181,6 +183,22 @@ We propose a new structure-from-motion framework to recover accurate camera pose
 
 
 ## Gaussian Splatting:
+
+
+## 2025:
+### 1. EasySplat: View-Adaptive Learning makes 3D Gaussian Splatting Easy ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Ao Gao, Luosong Guo, Tao Chen, Zhao Wang, Ying Tai, Jian Yang, Zhenyu Zhang
+<details span>
+<summary><b>Abstract</b></summary>
+3D Gaussian Splatting (3DGS) techniques have achieved satisfactory 3D scene representation. Despite their impressive performance, they confront challenges due to the limitation of structure-from-motion (SfM) methods on acquiring accurate scene initialization, or the inefficiency of densification strategy. In this paper, we introduce a novel framework EasySplat to achieve high-quality 3DGS modeling. Instead of using SfM for scene initialization, we employ a novel method to release the power of large-scale pointmap approaches. Specifically, we propose an efficient grouping strategy based on view similarity, and use robust pointmap priors to obtain high-quality point clouds and camera poses for 3D scene initialization. After obtaining a reliable scene structure, we propose a novel densification approach that adaptively splits Gaussian primitives based on the average shape of neighboring Gaussian ellipsoids, utilizing KNN scheme. In this way, the proposed method tackles the limitation on initialization and optimization, leading to an efficient and accurate 3DGS modeling. Extensive experiments demonstrate that EasySplat outperforms the current state-of-the-art (SOTA) in handling novel view synthesis.
+</details>
+
+  [📄 Paper](https://www.arxiv.org/pdf/2501.01003) |
+
+<br>
+<br>
+
+
 ## 2024:
 ### 1. InstantSplat: Unbounded Sparse-view Pose-free Gaussian Splatting in 40 Seconds ![](https://img.shields.io/badge/2024-arXiv-red)
 **Authors**: Zhiwen Fan, Wenyan Cong, Kairun Wen, Kevin Wang, Jian Zhang, Xinghao Ding, Danfei Xu, Boris Ivanovic, Marco Pavone, Georgios Pavlakos, Zhangyang Wang, Yue Wang
@@ -247,8 +265,49 @@ We present PreF3R, Pose-Free Feed-forward 3D Reconstruction from an image sequen
 <br>
 
 
+### 6. Dust to Tower: Coarse-to-Fine Photo-Realistic Scene Reconstruction from Sparse Uncalibrated Images ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Xudong Cai, Yongcai Wang, Zhaoxin Fan, Deng Haoran, Shuo Wang, Wanting Li, Deying Li, Lun Luo, Minhang Wang, Jintao Xu
+<details span>
+<summary><b>Abstract</b></summary>
+Photo-realistic scene reconstruction from sparse-view, uncalibrated images is highly required in practice. Although some successes have been made, existing methods are either Sparse-View but require accurate camera parameters (i.e., intrinsic and extrinsic), or SfM-free but need densely captured images. To combine the advantages of both methods while addressing their respective weaknesses, we propose Dust to Tower (D2T), an accurate and efficient coarse-to-fine framework to optimize 3DGS and image poses simultaneously from sparse and uncalibrated images. Our key idea is to first construct a coarse model efficiently and subsequently refine it using warped and inpainted images at novel viewpoints. To do this, we first introduce a Coarse Construction Module (CCM) which exploits a fast Multi-View Stereo model to initialize a 3D Gaussian Splatting (3DGS) and recover initial camera poses. To refine the 3D model at novel viewpoints, we propose a Confidence Aware Depth Alignment (CADA) module to refine the coarse depth maps by aligning their confident parts with estimated depths by a Mono-depth model. Then, a Warped Image-Guided Inpainting (WIGI) module is proposed to warp the training images to novel viewpoints by the refined depth maps, and inpainting is applied to fulfill the ``holes" in the warped images caused by view-direction changes, providing high-quality supervision to further optimize the 3D model and the camera poses. Extensive experiments and ablation studies demonstrate the validity of D2T and its design choices, achieving state-of-the-art performance in both tasks of novel view synthesis and pose estimation while keeping high efficiency. Codes will be publicly available.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.19518) | [💻 Code (to be released)]()
+
+<br>
 
 ## 3D Reconstruction:
+
+
+## 2025:
+### 1. MEt3R: Measuring Multi-View Consistency in Generated Images ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Mohammad Asim, Christopher Wewer, Thomas Wimmer, Bernt Schiele, Jan Eric Lenssen
+<details span>
+<summary><b>Abstract</b></summary>
+We introduce MEt3R, a metric for multi-view consistency in generated images. Large-scale generative models for multi-view image generation are rapidly advancing the field of 3D inference from sparse observations. However, due to the nature of generative modeling, traditional reconstruction metrics are not suitable to measure the quality of generated outputs and metrics that are independent of the sampling procedure are desperately needed. In this work, we specifically address the aspect of consistency between generated multi-view images, which can be evaluated independently of the specific scene. Our approach uses DUSt3R to obtain dense 3D reconstructions from image pairs in a feed-forward manner, which are used to warp image contents from one view into the other. Then, feature maps of these images are compared to obtain a similarity score that is invariant to view-dependent effects. Using MEt3R, we evaluate the consistency of a large set of previous methods for novel view and video generation, including our open, multi-view latent diffusion model.
+</details>
+  
+
+  [📄 Paper](https://arxiv.org/pdf/2501.06336) | [🌐 Project Page](https://geometric-rl.mpi-inf.mpg.de/met3r/) | [💻 Code](https://github.com/mohammadasim98/MEt3R)
+
+
+<br>
+
+
+
+### 2. Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Jianing Yang, Alexander Sax, Kevin J. Liang, Mikael Henaff, Hao Tang, Ang Cao, Joyce Chai, Franziska Meier, Matt Feiszli
+<details span>
+<summary><b>Abstract</b></summary>
+Multi-view 3D reconstruction remains a core challenge in computer vision, particularly in applications requiring accurate and scalable representations across diverse perspectives. Current leading methods such as DUSt3R employ a fundamentally pairwise approach, processing images in pairs and necessitating costly global alignment procedures to reconstruct from multiple views. In this work, we propose Fast 3D Reconstruction (Fast3R), a novel multi-view generalization to DUSt3R that achieves efficient and scalable 3D reconstruction by processing many views in parallel. Fast3R's Transformer-based architecture forwards N images in a single forward pass, bypassing the need for iterative alignment. Through extensive experiments on camera pose estimation and 3D reconstruction, Fast3R demonstrates state-of-the-art performance, with significant improvements in inference speed and reduced error accumulation. These results establish Fast3R as a robust alternative for multi-view applications, offering enhanced scalability without compromising reconstruction accuracy.
+</details>
+
+  [📄 Paper](https://arxiv.org/abs/2501.13928) | [🌐 Project Page](https://fast3r-3d.github.io/) | [💻 Code (to be released)](https://fast3r-3d.github.io/)
+<br>
+<br>
+
+
+
 ## 2024:
 ### 1. Spurfies: Sparse Surface Reconstruction using Local Geometry Priors ![](https://img.shields.io/badge/2024-arXiv-red)
 **Authors**: Kevin Raj, Christopher Wewer, Raza Yunus, Eddy Ilg, Jan Eric Lenssen
@@ -257,7 +316,7 @@ We present PreF3R, Pose-Free Feed-forward 3D Reconstruction from an image sequen
 We introduce Spurfies, a novel method for sparse-view surface reconstruction that disentangles appearance and geometry information to utilize local geometry priors trained on synthetic data. Recent research heavily focuses on 3D reconstruction using dense multi-view setups, typically requiring hundreds of images. However, these methods often struggle with few-view scenarios. Existing sparse-view reconstruction techniques often rely on multi-view stereo networks that need to learn joint priors for geometry and appearance from a large amount of data. In contrast, we introduce a neural point representation that disentangles geometry and appearance to train a local geometry prior using a subset of the synthetic ShapeNet dataset only. During inference, we utilize this surface prior as additional constraint for surface and appearance reconstruction from sparse input views via differentiable volume rendering, restricting the space of possible solutions. We validate the effectiveness of our method on the DTU dataset and demonstrate that it outperforms previous state of the art by 35% in surface quality while achieving competitive novel view synthesis quality. Moreover, in contrast to previous works, our method can be applied to larger, unbounded scenes, such as Mip-NeRF 360.
 </details>
 
-  [📄 Paper](https://arxiv.org/pdf/2408.16544) | [🌐 Project Page](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html) | [💻 Code (coming soom)](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html)
+  [📄 Paper](https://arxiv.org/pdf/2408.16544) | [🌐 Project Page](https://geometric-rl.mpi-inf.mpg.de/spurfies/index.html) | [💻 Code ](https://github.com/kevinYitshak/spurfies)
 
 <br>
 
@@ -269,7 +328,7 @@ We introduce Spurfies, a novel method for sparse-view surface reconstruction tha
 We present Spann3R, a novel approach for dense 3D reconstruction from ordered or unordered image collections. Built on the DUSt3R paradigm, Spann3R uses a transformer-based architecture to directly regress pointmaps from images without any prior knowledge of the scene or camera parameters. Unlike DUSt3R, which predicts per image-pair pointmaps each expressed in its local coordinate frame, Spann3R can predict per-image pointmaps expressed in a global coordinate system, thus eliminating the need for optimization-based global alignment. The key idea of Spann3R is to manage an external spatial memory that learns to keep track of all previous relevant 3D information. Spann3R then queries this spatial memory to predict the 3D structure of the next frame in a global coordinate system. Taking advantage of DUSt3R's pre-trained weights, and further fine-tuning on a subset of datasets, Spann3R shows competitive performance and generalization ability on various unseen datasets and can process ordered image collections in real time.
 </details>
 
-  [📄 Paper](https://arxiv.org/pdf/2408.16061) | [🌐 Project Page](https://hengyiwang.github.io/projects/spanner) | [💻 Code (coming soom)](https://hengyiwang.github.io/projects/spanner)
+  [📄 Paper](https://arxiv.org/pdf/2408.16061) | [🌐 Project Page](https://hengyiwang.github.io/projects/spanner) | [💻 Code](https://github.com/HengyiWang/spann3r)
 
 <br>
 
@@ -306,7 +365,7 @@ We present MoGe, a powerful model for recovering 3D geometry from monocular open
 Recent sparse multi-view scene reconstruction advances like DUSt3R and MASt3R no longer require camera calibration and camera pose estimation. However, they only process a pair of views at a time to infer pixel-aligned pointmaps. When dealing with more than two views, a combinatorial number of error prone pairwise reconstructions are usually followed by an expensive global optimization, which often fails to rectify the pairwise reconstruction errors. To handle more views, reduce errors, and improve inference time, we propose the fast single-stage feed-forward network MV-DUSt3R. At its core are multi-view decoder blocks which exchange information across any number of views while considering one reference view. To make our method robust to reference view selection, we further propose MV-DUSt3R+, which employs cross-reference-view blocks to fuse information across different reference view choices. To further enable novel view synthesis, we extend both by adding and jointly training Gaussian splatting heads. Experiments on multi-view stereo reconstruction, multi-view pose estimation, and novel view synthesis confirm that our methods improve significantly upon prior art. Code will be released.
 </details>
 
-  [📄 Paper](https://arxiv.org/pdf/2412.06974) | [🌐 Project Page](https://mv-dust3rp.github.io/) | [💻 Code (coming soon)](https://mv-dust3rp.github.io/)
+  [📄 Paper](https://arxiv.org/pdf/2412.06974) | [🌐 Project Page](https://mv-dust3rp.github.io/) | [💻 Code ](https://github.com/facebookresearch/mvdust3r)
 
 <br>
 
@@ -337,6 +396,21 @@ Emerging 3D geometric foundation models, such as DUSt3R, offer a promising appro
 
 
 ## Dynamic Scene Reconstruction:
+
+## 2025:
+
+### 1. Continuous 3D Perception Model with Persistent State ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Qianqian Wang, Yifei Zhang, Aleksander Holynski, Alexei A. Efros, Angjoo Kanazawa
+<details span>
+<summary><b>Abstract</b></summary>
+We present a unified framework capable of solving a broad range of 3D tasks. Our approach features a stateful recurrent model that continuously updates its state representation with each new observation. Given a stream of images, this evolving state can be used to generate metric-scale pointmaps (per-pixel 3D points) for each new input in an online fashion. These pointmaps reside within a common coordinate system, and can be accumulated into a coherent, dense scene reconstruction that updates as new images arrive. Our model, called CUT3R (Continuous Updating Transformer for 3D Reconstruction), captures rich priors of real-world scenes: not only can it predict accurate pointmaps from image observations, but it can also infer unseen regions of the scene by probing at virtual, unobserved views. Our method is simple yet highly flexible, naturally accepting varying lengths of images that may be either video streams or unordered photo collections, containing both static and dynamic content. We evaluate our method on various 3D/4D tasks and demonstrate competitive or state-of-the-art performance in each. 
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2501.12387) | [🌐 Project Page](https://cut3r.github.io/) | [💻 Code (to be released)](https://cut3r.github.io/)
+
+<br>
+<br>
+
 ## 2024:
 ### 1. MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion ![](https://img.shields.io/badge/2024-arXiv-red)
 **Authors**: Junyi Zhang, Charles Herrmann, Junhwa Hur, Varun Jampani, Trevor Darrell, Forrester Cole, Deqing Sun, Ming-Hsuan Yang
@@ -386,7 +460,7 @@ Reconstructing and understanding 3D structures from a limited number of images i
 In this work, we present the Large Spatial Model (LSM), which processes unposed RGB images directly into semantic radiance fields. LSM simultaneously estimates geometry, appearance, and semantics in a single feed-forward operation, and it can generate versatile label maps by interacting with language at novel viewpoints. Leveraging a Transformer-based architecture, LSM integrates global geometry through pixel-aligned point maps. To enhance spatial attribute regression, we incorporate local context aggregation with multi-scale fusion, improving the accuracy of fine local details. To tackle the scarcity of labeled 3D semantic data and enable natural language-driven scene manipulation, we incorporate a pre-trained 2D language-based segmentation model into a 3D-consistent semantic feature field. An efficient decoder then parameterizes a set of semantic anisotropic Gaussians, facilitating supervised end-to-end learning. Extensive experiments across various tasks show that LSM unifies multiple 3D vision tasks directly from unposed images, achieving real-time semantic 3D reconstruction for the first time.
 </details>
 
-  [📄 Paper](https://arxiv.org/pdf/2410.18956) | [💻 Code (to be released)]() | [🌐 Project Page](https://largespatialmodel.github.io/) | [🎮 Demo](https://huggingface.co/spaces/kairunwen/LSM)
+  [📄 Paper](https://arxiv.org/pdf/2410.18956) | [💻 Code](https://github.com/NVlabs/LSM) | [🌐 Project Page](https://largespatialmodel.github.io/) | [🎮 Demo](https://huggingface.co/spaces/kairunwen/LSM)
 
 
 ## Robotics:
