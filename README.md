@@ -438,7 +438,7 @@ Estimating geometry from dynamic scenes, where objects move and deform over time
 
 <br>
 
-### 2. Align3R: Aligned Monocular Depth Estimation for Dynamic Videos ![](https://img.shields.io/badge/2025-arXiv-ligntgreen)
+### 2. Align3R: Aligned Monocular Depth Estimation for Dynamic Videos ![](https://img.shields.io/badge/2025-CVPR-ligntgreen)
 **Authors**: Jiahao Lu, Tianyu Huang, Peng Li, Zhiyang Dou, Cheng Lin, Zhiming Cui, Zhen Dong, Sai-Kit Yeung, Wenping Wang, Yuan Liu
 <details span>
 <summary><b>Abstract</b></summary>
