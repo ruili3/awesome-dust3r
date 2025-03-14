@@ -28,6 +28,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Mar 14, 2025**: Add MUSt3R.
+<br>
 **Jan 24, 2025**: Add CUT3R, Fast3R, EasySplat, MEt3R, Dust-to-Tower. Happy New Year!
 <br>
 **Dec 20, 2024**: Add Align3R, PeRF3R, MV-DUSt3R+, Stereo4D, SLAM3R, LoRA3D.
@@ -295,14 +297,27 @@ We introduce MEt3R, a metric for multi-view consistency in generated images. Lar
 
 
 
-### 2. Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass ![](https://img.shields.io/badge/2025-arXiv-red)
+### 2. Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Jianing Yang, Alexander Sax, Kevin J. Liang, Mikael Henaff, Hao Tang, Ang Cao, Joyce Chai, Franziska Meier, Matt Feiszli
 <details span>
 <summary><b>Abstract</b></summary>
 Multi-view 3D reconstruction remains a core challenge in computer vision, particularly in applications requiring accurate and scalable representations across diverse perspectives. Current leading methods such as DUSt3R employ a fundamentally pairwise approach, processing images in pairs and necessitating costly global alignment procedures to reconstruct from multiple views. In this work, we propose Fast 3D Reconstruction (Fast3R), a novel multi-view generalization to DUSt3R that achieves efficient and scalable 3D reconstruction by processing many views in parallel. Fast3R's Transformer-based architecture forwards N images in a single forward pass, bypassing the need for iterative alignment. Through extensive experiments on camera pose estimation and 3D reconstruction, Fast3R demonstrates state-of-the-art performance, with significant improvements in inference speed and reduced error accumulation. These results establish Fast3R as a robust alternative for multi-view applications, offering enhanced scalability without compromising reconstruction accuracy.
 </details>
 
-  [📄 Paper](https://arxiv.org/abs/2501.13928) | [🌐 Project Page](https://fast3r-3d.github.io/) | [💻 Code (to be released)](https://fast3r-3d.github.io/)
+  [📄 Paper](https://arxiv.org/abs/2501.13928) | [🌐 Project Page](https://fast3r-3d.github.io/) | [💻 Code](https://github.com/facebookresearch/fast3r)
+<br>
+<br>
+
+
+
+### 2. MUSt3R: Multi-view Network for Stereo 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Yohann Cabon, Lucas Stoffl, Leonid Antsfeld, Gabriela Csurka, Boris Chidlovskii, Jerome Revaud, Vincent Leroy
+<details span>
+<summary><b>Abstract</b></summary>
+DUSt3R introduced a novel paradigm in geometric computer vision by proposing a model that can provide dense and unconstrained Stereo 3D Reconstruction of arbitrary image collections with no prior information about camera calibration nor viewpoint poses. Under the hood, however, DUSt3R processes image pairs, regressing local 3D reconstructions that need to be aligned in a global coordinate system. The number of pairs, growing quadratically, is an inherent limitation that becomes especially concerning for robust and fast optimization in the case of large image collections. In this paper, we propose an extension of DUSt3R from pairs to multiple views, that addresses all aforementioned concerns. Indeed, we propose a Multi-view Network for Stereo 3D Reconstruction, or MUSt3R, that modifies the DUSt3R architecture by making it symmetric and extending it to directly predict 3D structure for all views in a common coordinate frame. Second, we entail the model with a multi-layer memory mechanism which allows to reduce the computational complexity and to scale the reconstruction to large collections, inferring thousands of 3D pointmaps at high frame-rates with limited added complexity. The framework is designed to perform 3D reconstruction both offline and online, and hence can be seamlessly applied to SfM and visual SLAM scenarios showing state-of-the-art performance on various 3D downstream tasks, including uncalibrated Visual Odometry, relative camera pose, scale and focal estimation, 3D reconstruction and multi-view depth estimation.
+</details>
+
+  [📄 Paper](https://www.arxiv.org/pdf/2503.01661) | [🌐 Project Page](https://github.com/naver/must3r) | [💻 Code](https://github.com/naver/must3r)
 <br>
 <br>
 
@@ -423,7 +438,7 @@ Estimating geometry from dynamic scenes, where objects move and deform over time
 
 <br>
 
-### 2. Align3R: Aligned Monocular Depth Estimation for Dynamic Videos ![](https://img.shields.io/badge/2024-arXiv-red)
+### 2. Align3R: Aligned Monocular Depth Estimation for Dynamic Videos ![](https://img.shields.io/badge/2025-arXiv-ligntgreen)
 **Authors**: Jiahao Lu, Tianyu Huang, Peng Li, Zhiyang Dou, Cheng Lin, Zhiming Cui, Zhen Dong, Sai-Kit Yeung, Wenping Wang, Yuan Liu
 <details span>
 <summary><b>Abstract</b></summary>
