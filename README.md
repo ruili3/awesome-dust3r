@@ -28,7 +28,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Mar 14, 2025**: Add MUSt3R.
+**Mar 16, 2025**: Add MUSt3R, PE3R.
 <br>
 **Jan 24, 2025**: Add CUT3R, Fast3R, EasySplat, MEt3R, Dust-to-Tower. Happy New Year!
 <br>
@@ -466,6 +466,20 @@ Learning to understand dynamic 3D scenes from imagery is crucial for application
 
 
 ## Scene Understanding:
+
+## 2025:
+### 1.PE3R: Perception-Efficient 3D Reconstruction ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Jie Hu, Shizun Wang, Xinchao Wang
+<details span>
+<summary><b>Abstract</b></summary>
+Recent advancements in 2D-to-3D perception have significantly improved the understanding of 3D scenes from 2D images. However, existing methods face critical challenges, including limited generalization across scenes, suboptimal perception accuracy, and slow reconstruction speeds. To address these limitations, we propose Perception-Efficient 3D Reconstruction (PE3R), a novel framework designed to enhance both accuracy and efficiency. PE3R employs a feed-forward architecture to enable rapid 3D semantic field reconstruction. The framework demonstrates robust zero-shot generalization across diverse scenes and objects while significantly improving reconstruction speed. Extensive experiments on 2D-to-3D open-vocabulary segmentation and 3D reconstruction validate the effectiveness and versatility of PE3R. The framework achieves a minimum 9-fold speedup in 3D semantic field reconstruction, along with substantial gains in perception accuracy and reconstruction precision, setting new benchmarks in the field.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2503.07507) | [💻 Code](https://github.com/hujiecpp/PE3R)
+<br>
+<br>
+
+
 ## 2024:
 ### 1. LargeSpatialModel: End-to-end Unposed Images to Semantic 3D ![](https://img.shields.io/badge/2024-Neurips-blue)
 **Authors**: Zhiwen Fan, Jian Zhang, Wenyan Cong, Peihao Wang, Renjie Li, Kairun Wen, Shijie Zhou, Achuta Kadambi, Zhangyang Wang, Danfei Xu, Boris Ivanovic, Marco Pavone, Yue Wang
