@@ -404,7 +404,7 @@ We present Pow3r, a novel large 3D vision regression model that is highly versat
 
 
 
-### 9. Mono3R: Exploiting Monocular Cues for Geometric 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+### 9. Mono3R: Exploiting Monocular Cues for Geometric 3D Reconstruction ![](https://img.shields.io/badge/2025-arXiv-red)
 **Authors**: Wenyu Li, Sidun Liu, Peng Qiao, Yong Dou
 <details span>
 <summary><b>Abstract</b></summary>
