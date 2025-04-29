@@ -198,6 +198,17 @@ We propose a new structure-from-motion framework to recover accurate camera pose
   [📄 Paper](https://www.arxiv.org/pdf/2501.01003) |
 
 <br>
+
+### 2. FlowR: Flowing from Sparse to Dense 3D Reconstructions ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Tobias Fischer, Samuel Rota Bulò, Yung-Hsu Yang, Nikhil Varma Keetha, Lorenzo Porzi, Norman Müller, Katja Schwarz, Jonathon Luiten, Marc Pollefeys, Peter Kontschieder
+<details span>
+<summary><b>Abstract</b></summary>
+3D Gaussian splatting enables high-quality novel view synthesis (NVS) at real-time frame rates. However, its quality drops sharply as we depart from the training views. Thus, dense captures are needed to match the high-quality expectations of some applications, e.g. Virtual Reality (VR). However, such dense captures are very laborious and expensive to obtain. Existing works have explored using 2D generative models to alleviate this requirement by distillation or generating additional training views. These methods are often conditioned only on a handful of reference input views and thus do not fully exploit the available 3D information, leading to inconsistent generation results and reconstruction artifacts. To tackle this problem, we propose a multi-view, flow matching model that learns a flow to connect novel view renderings from possibly sparse reconstructions to renderings that we expect from dense reconstructions. This enables augmenting scene captures with novel, generated views to improve reconstruction quality. Our model is trained on a novel dataset of 3.6M image pairs and can process up to 45 views at 540x960 resolution (91K tokens) on one H100 GPU in a single forward pass. Our pipeline consistently improves NVS in sparse- and dense-view scenarios, leading to higher-quality reconstructions than prior works across multiple, widely-used NVS benchmarks.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.01647) | [🌐 Project Page](https://tobiasfshr.github.io/pub/flowr/)
+<br>
+
 <br>
 
 
@@ -310,7 +321,7 @@ Multi-view 3D reconstruction remains a core challenge in computer vision, partic
 
 
 
-### 2. MUSt3R: Multi-view Network for Stereo 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+### 3. MUSt3R: Multi-view Network for Stereo 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Yohann Cabon, Lucas Stoffl, Leonid Antsfeld, Gabriela Csurka, Boris Chidlovskii, Jerome Revaud, Vincent Leroy
 <details span>
 <summary><b>Abstract</b></summary>
@@ -319,6 +330,47 @@ DUSt3R introduced a novel paradigm in geometric computer vision by proposing a m
 
   [📄 Paper](https://www.arxiv.org/pdf/2503.01661) | [🌐 Project Page](https://github.com/naver/must3r) | [💻 Code](https://github.com/naver/must3r)
 <br>
+<br>
+
+
+
+
+### 4. VGGT: Visual Geometry Grounded Transformer ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Jianyuan Wang, Minghao Chen, Nikita Karaev, Andrea Vedaldi, Christian Rupprecht, David Novotny
+<details span>
+<summary><b>Abstract</b></summary>
+We present VGGT, a feed-forward neural network that directly infers all key 3D attributes of a scene, including camera parameters, point maps, depth maps, and 3D point tracks, from one, a few, or hundreds of its views. This approach is a step forward in 3D computer vision, where models have typically been constrained to and specialized for single tasks. It is also simple and efficient, reconstructing images in under one second, and still outperforming alternatives that require post-processing with visual geometry optimization techniques. The network achieves state-of-the-art results in multiple 3D tasks, including camera parameter estimation, multi-view depth estimation, dense point cloud reconstruction, and 3D point tracking. We also show that using pretrained VGGT as a feature backbone significantly enhances downstream tasks, such as non-rigid point tracking and feed-forward novel view synthesis.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2503.11651) | [🌐 Project Page](https://vgg-t.github.io/) | [💻 Code](https://github.com/facebookresearch/vggt) | [🤗 Demo](https://huggingface.co/spaces/facebook/vggt)
+
+<br>
+
+
+
+### 5. MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Riku Murai, Eric Dexheimer, Andrew J. Davison
+<details span>
+<summary><b>Abstract</b></summary>
+We present a real-time monocular dense SLAM system designed bottom-up from MASt3R, a two-view 3D reconstruction and matching prior. Equipped with this strong prior, our system is robust on in-the-wild video sequences despite making no assumption on a fixed or parametric camera model beyond a unique camera centre. We introduce efficient methods for pointmap matching, camera tracking and local fusion, graph construction and loop closure, and second-order global optimisation. With known calibration, a simple modification to the system achieves state-of-the-art performance across various benchmarks. Altogether, we propose a plug-and-play monocular SLAM system capable of producing globally-consistent poses and dense geometry while operating at 15 FPS.
+</details>
+
+  [📄 Paper](https://arxiv.org/html/2412.12392v1) | [🌐 Project Page](https://edexheim.github.io/mast3r-slam/) | [💻 Code](https://github.com/rmurai0610/MASt3R-SLAM)
+
+<br>
+
+
+
+
+### 6.Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Wonbong Jang, Philippe Weinzaepfel, Vincent Leroy, Lourdes Agapito, Jerome Revaud
+<details span>
+<summary><b>Abstract</b></summary>
+We present Pow3r, a novel large 3D vision regression model that is highly versatile in the input modalities it accepts. Unlike previous feed-forward models that lack any mechanism to exploit known camera or scene priors at test time, Pow3r incorporates any combination of auxiliary information such as intrinsics, relative pose, dense or sparse depth, alongside input images, within a single network. Building upon the recent DUSt3R paradigm, a transformer-based architecture that leverages powerful pre-training, our lightweight and versatile conditioning acts as additional guidance for the network to predict more accurate estimates when auxiliary information is available. During training we feed the model with random subsets of modalities at each iteration, which enables the model to operate under different levels of known priors at test time. This in turn opens up new capabilities, such as performing inference in native image resolution, or point-cloud completion. Our experiments on 3D reconstruction, depth completion, multi-view depth prediction, multi-view stereo, and multi-view pose estimation tasks yield state-of-the-art results and confirm the effectiveness of Pow3r at exploiting all available information.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2503.17316) | [🌐 Project Page](https://europe.naverlabs.com/research/publications/pow3r-empowering-unconstrained-3d-reconstruction-with-camera-and-scene-priors/)
+
 <br>
 
 
@@ -424,6 +476,21 @@ We present a unified framework capable of solving a broad range of 3D tasks. Our
   [📄 Paper](https://arxiv.org/pdf/2501.12387) | [🌐 Project Page](https://cut3r.github.io/) | [💻 Code (to be released)](https://cut3r.github.io/)
 
 <br>
+
+
+
+### 2. Easi3R: Estimating Disentangled Motion from DUSt3R Without Training ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Xingyu Chen, Yue Chen, Yuliang Xiu, Andreas Geiger, Anpei Chen
+<details span>
+<summary><b>Abstract</b></summary>
+Recent advances in DUSt3R have enabled robust estimation of dense point clouds and camera parameters of static scenes, leveraging Transformer network architectures and direct supervision on large-scale 3D datasets. In contrast, the limited scale and diversity of available 4D datasets present a major bottleneck for training a highly generalizable 4D model. This constraint has driven conventional 4D methods to fine-tune 3D models on scalable dynamic video data with additional geometric priors such as optical flow and depths. In this work, we take an opposite path and introduce Easi3R, a simple yet efficient training-free method for 4D reconstruction. Our approach applies attention adaptation during inference, eliminating the need for from-scratch pre-training or network fine-tuning. We find that the attention layers in DUSt3R inherently encode rich information about camera and object motion. By carefully disentangling these attention maps, we achieve accurate dynamic region segmentation, camera pose estimation, and 4D dense point map reconstruction. Extensive experiments on real-world dynamic videos demonstrate that our lightweight attention adaptation significantly outperforms previous state-of-the-art methods that are trained or finetuned on extensive dynamic datasets.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2503.24391) | [🌐 Project Page](https://easi3r.github.io/) | [💻 Code](https://github.com/Inception3D/Easi3R)
+
+<br>
+
+
 <br>
 
 ## 2024:
@@ -458,11 +525,23 @@ Recent developments in monocular depth estimation methods enable high-quality de
 Learning to understand dynamic 3D scenes from imagery is crucial for applications ranging from robotics to scene reconstruction. Yet, unlike other problems where large-scale supervised training has enabled rapid progress, directly supervising methods for recovering 3D motion remains challenging due to the fundamental difficulty of obtaining ground truth annotations. We present a system for mining high-quality 4D reconstructions from internet stereoscopic, wide-angle videos. Our system fuses and filters the outputs of camera pose estimation, stereo depth estimation, and temporal tracking methods into high-quality dynamic 3D reconstructions. We use this method to generate large-scale data in the form of world-consistent, pseudo-metric 3D point clouds with long-term motion trajectories. We demonstrate the utility of this data by training a variant of DUSt3R to predict structure and 3D motion from real-world image pairs, showing that training on our reconstructed data enables generalization to diverse real-world scenes. Project page: this https URL
 </details>
 
-  [📄 Paper](https://arxiv.org/pdf/2412.09621) | [🌐 Project Page](https://stereo4d.github.io/) | [💻 Code (coming soon)](https://stereo4d.github.io/)
+  [📄 Paper](https://arxiv.org/pdf/2412.09621) | [🌐 Project Page](https://stereo4d.github.io/) | [💻 Code](https://github.com/Stereo4d/stereo4d-code)
 
 <br>
 
 
+
+### 4. DAS3R: Dynamics-Aware Gaussian Splatting for Static Scene Reconstruction
+ ![](https://img.shields.io/badge/2024-arXiv-red)
+**Authors**: Kai Xu, Tze Ho Elden Tse, Jizong Peng, Angela Yao
+<details span>
+<summary><b>Abstract</b></summary>
+We propose a novel framework for scene decomposition and static background reconstruction from everyday videos. By integrating the trained motion masks and modeling the static scene as Gaussian splats with dynamics-aware optimization, our method achieves more accurate background reconstruction results than previous works. Our proposed method is termed DAS3R, an abbreviation for Dynamics-Aware Gaussian Splatting for Static Scene Reconstruction. Compared to existing methods, DAS3R is more robust in complex motion scenarios, capable of handling videos where dynamic objects occupy a significant portion of the scene, and does not require camera pose inputs or point cloud data from SLAM-based methods.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.19584v1) | [🌐 Project Page](https://kai422.github.io/DAS3R/) | [💻 Code](https://github.com/kai422/das3r)
+
+<br>
 
 
 ## Scene Understanding:
