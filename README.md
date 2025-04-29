@@ -16,6 +16,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 - [Dynamic Scene Reconstruction](#dynamic-scene-reconstruction)
 - [Scene Understanding](#scene-understanding)
 - [Robotics](#robotics)
+- [Pose Estimation](#pose-estimation)
 
 <br>
 
@@ -28,6 +29,11 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+
+**Apr 29, 2025**: Add Pow3R, Mono3R, Easi3R, FlowR, ODHSR, DPM, Geo4D, POMATO, DAS3R.
+<br>
+**Mar 20, 2025**: Add Reloc3r, Pos3R, MASt3R-SLAM, Light3R-SfM, VGGT. 
+<br>
 **Mar 16, 2025**: Add MUSt3R, PE3R.
 <br>
 **Jan 24, 2025**: Add CUT3R, Fast3R, EasySplat, MEt3R, Dust-to-Tower. Happy New Year!
@@ -293,7 +299,31 @@ Photo-realistic scene reconstruction from sparse-view, uncalibrated images is hi
 
 
 ## 2025:
-### 1. MEt3R: Measuring Multi-View Consistency in Generated Images ![](https://img.shields.io/badge/2025-arXiv-red)
+### 1. SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Yuzheng Liu, Siyan Dong, Shuzhe Wang, Yingda Yin, Yanchao Yang, Qingnan Fan, Baoquan Chen
+<details span>
+<summary><b>Abstract</b></summary>
+In this paper, we introduce SLAM3R, a novel and effective system for real-time, high-quality, dense 3D reconstruction using RGB videos. SLAM3R provides an end-to-end solution by seamlessly integrating local 3D reconstruction and global coordinate registration through feed-forward neural networks. Given an input video, the system first converts it into overlapping clips using a sliding window mechanism. Unlike traditional pose optimization-based methods, SLAM3R directly regresses 3D pointmaps from RGB images in each window and progressively aligns and deforms these local pointmaps to create a globally consistent scene reconstruction - all without explicitly solving any camera parameters. Experiments across datasets consistently show that SLAM3R achieves state-of-the-art reconstruction accuracy and completeness while maintaining real-time performance at 20+ FPS. [Code](https://github.com/PKU-VCL-3DV/SLAM3R). 
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.09401) | [💻 Code](https://github.com/PKU-VCL-3DV/SLAM3R)
+
+<br>
+
+
+### 2. MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Riku Murai, Eric Dexheimer, Andrew J. Davison
+<details span>
+<summary><b>Abstract</b></summary>
+We present a real-time monocular dense SLAM system designed bottom-up from MASt3R, a two-view 3D reconstruction and matching prior. Equipped with this strong prior, our system is robust on in-the-wild video sequences despite making no assumption on a fixed or parametric camera model beyond a unique camera centre. We introduce efficient methods for pointmap matching, camera tracking and local fusion, graph construction and loop closure, and second-order global optimisation. With known calibration, a simple modification to the system achieves state-of-the-art performance across various benchmarks. Altogether, we propose a plug-and-play monocular SLAM system capable of producing globally-consistent poses and dense geometry while operating at 15 FPS.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.12392) | [🌐 Project Page](https://edexheim.github.io/mast3r-slam/) | [💻 Code](https://github.com/rmurai0610/MASt3R-SLAM) 
+
+<br>
+
+
+### 3. MEt3R: Measuring Multi-View Consistency in Generated Images ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Mohammad Asim, Christopher Wewer, Thomas Wimmer, Bernt Schiele, Jan Eric Lenssen
 <details span>
 <summary><b>Abstract</b></summary>
@@ -307,8 +337,7 @@ We introduce MEt3R, a metric for multi-view consistency in generated images. Lar
 <br>
 
 
-
-### 2. Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+### 4. Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Jianing Yang, Alexander Sax, Kevin J. Liang, Mikael Henaff, Hao Tang, Ang Cao, Joyce Chai, Franziska Meier, Matt Feiszli
 <details span>
 <summary><b>Abstract</b></summary>
@@ -320,8 +349,19 @@ Multi-view 3D reconstruction remains a core challenge in computer vision, partic
 <br>
 
 
+### 5. Light3R-SfM: Towards Feed-forward Structure-from-Motion ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Sven Elflein, Qunjie Zhou, Sérgio Agostinho, Laura Leal-Taixé
+<details span>
+<summary><b>Abstract</b></summary>
+We present Light3R-SfM, a feed-forward, end-to-end learnable framework for efficient large-scale Structure-from-Motion (SfM) from unconstrained image collections. Unlike existing SfM solutions that rely on costly matching and global optimization to achieve accurate 3D reconstructions, Light3R-SfM addresses this limitation through a novel latent global alignment module. This module replaces traditional global optimization with a learnable attention mechanism, effectively capturing multi-view constraints across images for robust and precise camera pose estimation. Light3R-SfM constructs a sparse scene graph via retrieval-score-guided shortest path tree to dramatically reduce memory usage and computational overhead compared to the naive approach. Extensive experiments demonstrate that Light3R-SfM achieves competitive accuracy while significantly reducing runtime, making it ideal for 3D reconstruction tasks in real-world applications with a runtime constraint. This work pioneers a data-driven, feed-forward SfM approach, paving the way toward scalable, accurate, and efficient 3D reconstruction in the wild.
+</details>
 
-### 3. MUSt3R: Multi-view Network for Stereo 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+  [📄 Paper](https://arxiv.org/pdf/2501.14914)
+
+<br>
+
+
+### 6. MUSt3R: Multi-view Network for Stereo 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Yohann Cabon, Lucas Stoffl, Leonid Antsfeld, Gabriela Csurka, Boris Chidlovskii, Jerome Revaud, Vincent Leroy
 <details span>
 <summary><b>Abstract</b></summary>
@@ -329,13 +369,14 @@ DUSt3R introduced a novel paradigm in geometric computer vision by proposing a m
 </details>
 
   [📄 Paper](https://www.arxiv.org/pdf/2503.01661) | [🌐 Project Page](https://github.com/naver/must3r) | [💻 Code](https://github.com/naver/must3r)
+
 <br>
-<br>
 
 
 
 
-### 4. VGGT: Visual Geometry Grounded Transformer ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+
+### 7. VGGT: Visual Geometry Grounded Transformer ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Jianyuan Wang, Minghao Chen, Nikita Karaev, Andrea Vedaldi, Christian Rupprecht, David Novotny
 <details span>
 <summary><b>Abstract</b></summary>
@@ -348,21 +389,8 @@ We present VGGT, a feed-forward neural network that directly infers all key 3D a
 
 
 
-### 5. MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
-**Authors**: Riku Murai, Eric Dexheimer, Andrew J. Davison
-<details span>
-<summary><b>Abstract</b></summary>
-We present a real-time monocular dense SLAM system designed bottom-up from MASt3R, a two-view 3D reconstruction and matching prior. Equipped with this strong prior, our system is robust on in-the-wild video sequences despite making no assumption on a fixed or parametric camera model beyond a unique camera centre. We introduce efficient methods for pointmap matching, camera tracking and local fusion, graph construction and loop closure, and second-order global optimisation. With known calibration, a simple modification to the system achieves state-of-the-art performance across various benchmarks. Altogether, we propose a plug-and-play monocular SLAM system capable of producing globally-consistent poses and dense geometry while operating at 15 FPS.
-</details>
 
-  [📄 Paper](https://arxiv.org/html/2412.12392v1) | [🌐 Project Page](https://edexheim.github.io/mast3r-slam/) | [💻 Code](https://github.com/rmurai0610/MASt3R-SLAM)
-
-<br>
-
-
-
-
-### 6.Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+### 8. Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
 **Authors**: Wonbong Jang, Philippe Weinzaepfel, Vincent Leroy, Lourdes Agapito, Jerome Revaud
 <details span>
 <summary><b>Abstract</b></summary>
@@ -372,6 +400,21 @@ We present Pow3r, a novel large 3D vision regression model that is highly versat
   [📄 Paper](https://arxiv.org/pdf/2503.17316) | [🌐 Project Page](https://europe.naverlabs.com/research/publications/pow3r-empowering-unconstrained-3d-reconstruction-with-camera-and-scene-priors/)
 
 <br>
+
+
+
+
+### 9. Mono3R: Exploiting Monocular Cues for Geometric 3D Reconstruction ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Wenyu Li, Sidun Liu, Peng Qiao, Yong Dou
+<details span>
+<summary><b>Abstract</b></summary>
+Recent advances in data-driven geometric multi-view 3D reconstruction foundation models (e.g., DUSt3R) have shown remarkable performance across various 3D vision tasks, facilitated by the release of large-scale, high-quality 3D datasets. However, as we observed, constrained by their matching-based principles, the reconstruction quality of existing models suffers significant degradation in challenging regions with limited matching cues, particularly in weakly textured areas and low-light conditions. To mitigate these limitations, we propose to harness the inherent robustness of monocular geometry estimation to compensate for the inherent shortcomings of matching-based methods. Specifically, we introduce a monocular-guided refinement module that integrates monocular geometric priors into multi-view reconstruction frameworks. This integration substantially enhances the robustness of multi-view reconstruction systems, leading to high-quality feed-forward reconstructions. Comprehensive experiments across multiple benchmarks demonstrate that our method achieves substantial improvements in both mutli-view camera pose estimation and point cloud accuracy.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.13419)
+
+<br>
+
 
 
 
@@ -437,20 +480,9 @@ Recent sparse multi-view scene reconstruction advances like DUSt3R and MASt3R no
 <br>
 
 
-### 6. SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos ![](https://img.shields.io/badge/2024-arXiv-red)
-**Authors**: Yuzheng Liu, Siyan Dong, Shuzhe Wang, Yanchao Yang, Qingnan Fan, Baoquan Chen
-<details span>
-<summary><b>Abstract</b></summary>
-In this paper, we introduce SLAM3R, a novel and effective monocular RGB SLAM system for real-time and high-quality dense 3D reconstruction. SLAM3R provides an end-to-end solution by seamlessly integrating local 3D reconstruction and global coordinate registration through feed-forward neural networks. Given an input video, the system first converts it into overlapping clips using a sliding window mechanism. Unlike traditional pose optimization-based methods, SLAM3R directly regresses 3D pointmaps from RGB images in each window and progressively aligns and deforms these local pointmaps to create a globally consistent scene reconstruction - all without explicitly solving any camera parameters. Experiments across datasets consistently show that SLAM3R achieves state-of-the-art reconstruction accuracy and completeness while maintaining real-time performance at 20+ FPS. Code and weights at: this https URL.
-</details>
-
-  [📄 Paper](https://arxiv.org/pdf/2412.09401) | [💻 Code](https://github.com/PKU-VCL-3DV/SLAM3R)
-
-<br>
 
 
-
-### 7. LoRA3D: Low-Rank Self-Calibration of 3D Geometric Foundation Models ![](https://img.shields.io/badge/2024-arXiv-red)
+### 6. LoRA3D: Low-Rank Self-Calibration of 3D Geometric Foundation Models ![](https://img.shields.io/badge/2024-arXiv-red)
 **Authors**: Ziqi Lu, Heng Yang, Danfei Xu, Boyi Li, Boris Ivanovic, Marco Pavone, Yue Wang
 <details span>
 <summary><b>Abstract</b></summary>
@@ -489,6 +521,58 @@ Recent advances in DUSt3R have enabled robust estimation of dense point clouds a
   [📄 Paper](https://arxiv.org/pdf/2503.24391) | [🌐 Project Page](https://easi3r.github.io/) | [💻 Code](https://github.com/Inception3D/Easi3R)
 
 <br>
+
+
+
+### 3. ODHSR: Online Dense 3D Reconstruction of Humans and Scenes from Monocular Videos ![](https://img.shields.io/badge/2025-CVPR-ligntgreen)
+**Authors**: Zetong Zhang, Manuel Kaufmann, Lixin Xue, Jie Song, Martin R. Oswald
+<details span>
+<summary><b>Abstract</b></summary>
+Creating a photorealistic scene and human reconstruction from a single monocular in-the-wild video figures prominently in the perception of a human-centric 3D world. Recent neural rendering advances have enabled holistic human-scene reconstruction but require pre-calibrated camera and human poses, and days of training time. In this work, we introduce a novel unified framework that simultaneously performs camera tracking, human pose estimation and human-scene reconstruction in an online fashion. 3D Gaussian Splatting is utilized to learn Gaussian primitives for humans and scenes efficiently, and reconstruction-based camera tracking and human pose estimation modules are designed to enable holistic understanding and effective disentanglement of pose and appearance. Specifically, we design a human deformation module to reconstruct the details and enhance generalizability to out-of-distribution poses faithfully. Aiming to learn the spatial correlation between human and scene accurately, we introduce occlusion-aware human silhouette rendering and monocular geometric priors, which further improve reconstruction quality. Experiments on the EMDB and NeuMan datasets demonstrate superior or on-par performance with existing methods in camera tracking, human pose estimation, novel view synthesis and runtime.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.13167) | [🌐 Project Page](https://eth-ait.github.io/ODHSR/) | [💻 Code](https://github.com/eth-ait/ODHSR)
+
+<br>
+
+
+### 4. Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Zetong Zhang, Manuel Kaufmann, Lixin Xue, Jie Song, Martin R. Oswald
+<details span>
+<summary><b>Abstract</b></summary>
+DUSt3R has recently shown that one can reduce many tasks in multi-view geometry, including estimating camera intrinsics and extrinsics, reconstructing the scene in 3D, and establishing image correspondences, to the prediction of a pair of viewpoint-invariant point maps, i.e., pixel-aligned point clouds defined in a common reference frame. This formulation is elegant and powerful, but unable to tackle dynamic scenes. To address this challenge, we introduce the concept of Dynamic Point Maps (DPM), extending standard point maps to support 4D tasks such as motion segmentation, scene flow estimation, 3D object tracking, and 2D correspondence. Our key intuition is that, when time is introduced, there are several possible spatial and time references that can be used to define the point maps. We identify a minimal subset of such combinations that can be regressed by a network to solve the sub tasks mentioned above. We train a DPM predictor on a mixture of synthetic and real data and evaluate it across diverse benchmarks for video depth prediction, dynamic point cloud reconstruction, 3D scene flow and object pose tracking, achieving state-of-the-art performance.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2503.16318) | [🌐 Project Page](https://www.robots.ox.ac.uk/~vgg/research/dynamic-point-maps/)
+
+<br>
+
+
+
+### 5. Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Zeren Jiang, Chuanxia Zheng, Iro Laina, Diane Larlus, Andrea Vedaldi
+<details span>
+<summary><b>Abstract</b></summary>
+We introduce Geo4D, a method to repurpose video diffusion models for monocular 3D reconstruction of dynamic scenes. By leveraging the strong dynamic prior captured by such video models, Geo4D can be trained using only synthetic data while generalizing well to real data in a zero-shot manner. Geo4D predicts several complementary geometric modalities, namely point, depth, and ray maps. It uses a new multi-modal alignment algorithm to align and fuse these modalities, as well as multiple sliding windows, at inference time, thus obtaining robust and accurate 4D reconstruction of long videos. Extensive experiments across multiple benchmarks show that Geo4D significantly surpasses state-of-the-art video depth estimation methods, including recent methods such as MonST3R, which are also designed to handle dynamic scenes.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.07961) | [🌐 Project Page](https://geo4d.github.io/) | | [💻 Code](https://github.com/jzr99/Geo4D)
+
+<br>
+
+
+
+### 6. POMATO: Marrying Pointmap Matching with Temporal Motion for Dynamic 3D Reconstruction ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Songyan Zhang, Yongtao Ge, Jinyuan Tian, Guangkai Xu, Hao Chen, Chen Lv, Chunhua Shen
+<details span>
+<summary><b>Abstract</b></summary>
+3D reconstruction in dynamic scenes primarily relies on the combination of geometry estimation and matching modules where the latter task is pivotal for distinguishing dynamic regions which can help to mitigate the interference introduced by camera and object motion. Furthermore, the matching module explicitly models object motion, enabling the tracking of specific targets and advancing motion understanding in complex scenarios. Recently, the proposed representation of pointmap in DUSt3R suggests a potential solution to unify both geometry estimation and matching in 3D space, but it still struggles with ambiguous matching in dynamic regions, which may hamper further improvement. In this work, we present POMATO, a unified framework for dynamic 3D reconstruction by marrying pointmap matching with temporal motion. Specifically, our method first learns an explicit matching relationship by mapping RGB pixels from both dynamic and static regions across different views to 3D pointmaps within a unified coordinate system. Furthermore, we introduce a temporal motion module for dynamic motions that ensures scale consistency across different frames and enhances performance in tasks requiring both precise geometry and reliable matching, most notably 3D point tracking. We show the effectiveness of the proposed pointmap matching and temporal fusion paradigm by demonstrating the remarkable performance across multiple downstream tasks, including video depth estimation, 3D point tracking, and pose estimation.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.05692) | [💻 Code](https://github.com/wyddmw/POMATO)
+
+<br>
+
 
 
 <br>
@@ -594,6 +678,35 @@ Humans have the remarkable ability to use held objects as tools to interact with
 
 [📄 Paper](https://www.researchgate.net/profile/Weiming-Zhi/publication/382490016_3D_Foundation_Models_Enable_Simultaneous_Geometry_and_Pose_Estimation_of_Grasped_Objects/links/66a01a4527b00e0ca43ddd95/3D-Foundation-Models-Enable-Simultaneous-Geometry-and-Pose-Estimation-of-Grasped-Objects.pdf)
 <br>
+
+
+
+
+## Pose Estimation:
+## 2025:
+### 1. Reloc3r: Large-Scale Training of Relative Camera Pose Regression for Generalizable, Fast, and Accurate Visual Localization ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Siyan Dong, Shuzhe Wang, Shaohui Liu, Lulu Cai, Qingnan Fan, Juho Kannala, Yanchao Yang
+<details span>
+<summary><b>Abstract</b></summary>
+Visual localization aims to determine the camera pose of a query image relative to a database of posed images. In recent years, deep neural networks that directly regress camera poses have gained popularity due to their fast inference capabilities. However, existing methods struggle to either generalize well to new scenes or provide accurate camera pose estimates. To address these issues, we present Reloc3r, a simple yet effective visual localization framework. It consists of an elegantly designed relative pose regression network, and a minimalist motion averaging module for absolute pose estimation. Trained on approximately eight million posed image pairs, Reloc3r achieves surprisingly good performance and generalization ability. We conduct extensive experiments on six public datasets, consistently demonstrating the effectiveness and efficiency of the proposed method. It provides high-quality camera pose estimates in real time and generalizes to novel scenes. [Code](https://github.com/ffrivera0/reloc3r).
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2412.08376) | [💻 Code](https://github.com/ffrivera0/reloc3r)
+
+<br>
+
+
+### 2. Pos3R: 6D Pose Estimation for Unseen Objects Made Easy ![](https://img.shields.io/badge/2025-CVPR-brightgreen)
+**Authors**: Weijian Deng, Dylan Campbell, Chunyi Sun, Jiahao Zhang, Shubham Kanitkar, Matthew Shaffer, Stephen Gould
+<details span>
+<summary><b>Abstract</b></summary>
+Foundation models have significantly reduced the need for task-specific training, while also enhancing generalizability. However, state-of-the-art 6D pose estimators either require further training with pose supervision or neglect advances obtainable from 3D foundation models. The latter is a missed opportunity, since these models are better equipped to predict 3D-consistent features, which are of significant utility for the pose estimation task. To address this gap, we propose Pos3R, a method for estimating the 6D pose of any object from a single RGB image, making extensive use of a 3D reconstruction foundation model and requiring no additional training. We identify template selection as a particular bottleneck for existing methods that is significantly alleviated by the use of a 3D model, which can more easily distinguish between template poses than a 2D model. Despite its simplicity, Pos3R achieves competitive performance on the BOP benchmark across seven diverse datasets, matching or surpassing existing refinement-free methods. Additionally, Pos3R integrates seamlessly with render-and-compare refinement techniques, demonstrating adaptability for high-precision applications.
+</details>
+
+  [📄 Paper]() | [💻 Code]()
+
+<br>
+
 
 ## Related Codebase
 1. [Mini-DUSt3R](https://github.com/pablovela5620/mini-dust3r): A miniature version of dust3r only for performing inference. May, 2024.
