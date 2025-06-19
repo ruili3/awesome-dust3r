@@ -31,10 +31,9 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**May 6, 2025**: Add [LaRI](https://ruili3.github.io/lari/index.html).
-
-<br>
 **June 19, 2025**: Add RaySt3R, Amodal3R, Styl3R.
+<br>
+**May 6, 2025**: Add [LaRI](https://ruili3.github.io/lari/index.html).
 <br>
 **Apr 29, 2025**: Add Pow3R, Mono3R, Easi3R, FlowR, ODHSR, DPM, Geo4D, POMATO, DAS3R.
 <br>
