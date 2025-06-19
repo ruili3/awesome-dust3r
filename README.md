@@ -32,6 +32,9 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <summary><b>Update Log:</b></summary>
 
 **May 6, 2025**: Add [LaRI](https://ruili3.github.io/lari/index.html).
+
+<br>
+**June 19, 2025**: Add RaySt3R, Amodal3R, Styl3R.
 <br>
 **Apr 29, 2025**: Add Pow3R, Mono3R, Easi3R, FlowR, ODHSR, DPM, Geo4D, POMATO, DAS3R.
 <br>
@@ -541,6 +544,29 @@ We present layered ray intersections (LaRI), a new method for unseen geometry re
 
 
 
+### 2. RaySt3R: Predicting Novel Depth Maps for Zero-Shot Object Completion ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Bardienus P. Duisterhof, Jan Oberst, Bowen Wen, Stan Birchfield, Deva Ramanan, Jeffrey Ichnowski
+<details span>
+<summary><b>Abstract</b></summary>
+3D shape completion has broad applications in robotics, digital twin reconstruction, and extended reality (XR). Although recent advances in 3D object and scene completion have achieved impressive results, existing methods lack 3D consistency, are computationally expensive, and struggle to capture sharp object boundaries. Our work (RaySt3R) addresses these limitations by recasting 3D shape completion as a novel view synthesis problem. Specifically, given a single RGB-D image and a novel viewpoint (encoded as a collection of query rays), we train a feedforward transformer to predict depth maps, object masks, and per-pixel confidence scores for those query rays. RaySt3R fuses these predictions across multiple query views to reconstruct complete 3D shapes. We evaluate RaySt3R on synthetic and real-world datasets, and observe it achieves state-of-the-art performance, outperforming the baselines on all datasets by up to 44% in 3D chamfer distance.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2506.05285) | [🌐 Project Page](https://rayst3r.github.io/) | [💻 Code](https://github.com/Duisterhof/rayst3r) | [🤗 Demo (coming soon)](https://rayst3r.github.io/) | [🎞️ Video](https://rayst3r.github.io/static/videos/teaser/teaser_fixed.mp4)
+
+<br>
+
+
+### 3. Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Tianhao Wu, Chuanxia Zheng, Frank Guan, Andrea Vedaldi, Tat-Jen Cham
+<details span>
+<summary><b>Abstract</b></summary>
+Most image-based 3D object reconstructors assume that objects are fully visible, ignoring occlusions that commonly occur in real-world scenarios. In this paper, we introduce Amodal3R, a conditional 3D generative model designed to reconstruct 3D objects from partial observations. We start from a "foundation" 3D generative model and extend it to recover plausible 3D geometry and appearance from occluded objects. We introduce a mask-weighted multi-head cross-attention mechanism followed by an occlusion-aware attention layer that explicitly leverages occlusion priors to guide the reconstruction process. We demonstrate that, by training solely on synthetic data, Amodal3R learns to recover full 3D objects even in the presence of occlusions in real scenes. It substantially outperforms existing methods that independently perform 2D amodal completion followed by 3D reconstruction, thereby establishing a new benchmark for occlusion-aware 3D reconstruction.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2503.13439) | [🌐 Project Page](https://sm0kywu.github.io/Amodal3R) | [💻 Code (coming soon)](https://sm0kywu.github.io/Amodal3R) | [🤗 Demo](https://huggingface.co/spaces/Sm0kyWu/Amodal3R)
+
+<br>
+
 
 
 
@@ -556,7 +582,7 @@ We present layered ray intersections (LaRI), a new method for unseen geometry re
 3D Gaussian Splatting (3DGS) techniques have achieved satisfactory 3D scene representation. Despite their impressive performance, they confront challenges due to the limitation of structure-from-motion (SfM) methods on acquiring accurate scene initialization, or the inefficiency of densification strategy. In this paper, we introduce a novel framework EasySplat to achieve high-quality 3DGS modeling. Instead of using SfM for scene initialization, we employ a novel method to release the power of large-scale pointmap approaches. Specifically, we propose an efficient grouping strategy based on view similarity, and use robust pointmap priors to obtain high-quality point clouds and camera poses for 3D scene initialization. After obtaining a reliable scene structure, we propose a novel densification approach that adaptively splits Gaussian primitives based on the average shape of neighboring Gaussian ellipsoids, utilizing KNN scheme. In this way, the proposed method tackles the limitation on initialization and optimization, leading to an efficient and accurate 3DGS modeling. Extensive experiments demonstrate that EasySplat outperforms the current state-of-the-art (SOTA) in handling novel view synthesis.
 </details>
 
-  [📄 Paper](https://www.arxiv.org/pdf/2501.01003) |
+  [📄 Paper](https://www.arxiv.org/pdf/2501.01003)
 
 <br>
 
@@ -568,6 +594,20 @@ We present layered ray intersections (LaRI), a new method for unseen geometry re
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2504.01647) | [🌐 Project Page](https://tobiasfshr.github.io/pub/flowr/)
+
+<br>
+
+
+
+### 3. Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Peng Wang, Xiang Liu, Peidong Liu
+<details span>
+<summary><b>Abstract</b></summary>
+Stylizing 3D scenes instantly while maintaining multi-view consistency and faithfully resembling a style image remains a significant challenge. Current state-of-the-art 3D stylization methods typically involve computationally intensive test-time optimization to transfer artistic features into a pretrained 3D representation, often requiring dense posed input images. In contrast, leveraging recent advances in feed-forward reconstruction models, we demonstrate a novel approach to achieve direct 3D stylization in less than a second using unposed sparse-view scene images and an arbitrary style image. To address the inherent decoupling between reconstruction and stylization, we introduce a branched architecture that separates structure modeling and appearance shading, effectively preventing stylistic transfer from distorting the underlying 3D scene structure. Furthermore, we adapt an identity loss to facilitate pre-training our stylization model through the novel view synthesis task. This strategy also allows our model to retain its original reconstruction capabilities while being fine-tuned for stylization. Comprehensive evaluations, using both in-domain and out-of-domain datasets, demonstrate that our approach produces high-quality stylized 3D content that achieve a superior blend of style and scene appearance, while also outperforming existing methods in terms of multi-view consistency and efficiency.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2505.21060) | [🌐 Project Page](https://nickisdope.github.io/Styl3R) | [💻 Code](https://github.com/WU-CVGL/Styl3R)
+
 <br>
 
 <br>
