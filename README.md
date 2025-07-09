@@ -19,6 +19,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 - [Scene Understanding](#scene-understanding)
 - [Robotics](#robotics)
 - [Pose Estimation](#pose-estimation)
+- [DUSt3R for Science](#dust3r-for-science)
 
 <br>
 
@@ -31,6 +32,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**July 9, 2025**: Add Point3R, GeometryCrafter, CryoFastAR.
+<br>
 **June 19, 2025**: Add RaySt3R, Amodal3R, Styl3R.
 <br>
 **May 6, 2025**: Add [LaRI](https://ruili3.github.io/lari/index.html).
@@ -316,6 +319,19 @@ Recent advances in data-driven geometric multi-view 3D reconstruction foundation
 <br>
 
 
+### 10. Point3R: Streaming 3D Reconstruction with Explicit Spatial Pointer Memory ![](https://img.shields.io/badge/2025-arXir-red)
+**Authors**: Yuqi Wu, Wenzhao Zheng, Jie Zhou, Jiwen Lu
+<details span>
+<summary><b>Abstract</b></summary>
+Dense 3D scene reconstruction from an ordered sequence or unordered image collections is a critical step when bringing research in computer vision into practical scenarios. Following the paradigm introduced by DUSt3R, which unifies an image pair densely into a shared coordinate system, subsequent methods maintain an implicit memory to achieve dense 3D reconstruction from more images. However, such implicit memory is limited in capacity and may suffer from information loss of earlier frames. We propose Point3R, an online framework targeting dense streaming 3D reconstruction. To be specific, we maintain an explicit spatial pointer memory directly associated with the 3D structure of the current scene. Each pointer in this memory is assigned a specific 3D position and aggregates scene information nearby in the global coordinate system into a changing spatial feature. Information extracted from the latest frame interacts explicitly with this pointer memory, enabling dense integration of the current observation into the global coordinate system. We design a 3D hierarchical position embedding to promote this interaction and design a simple yet effective fusion mechanism to ensure that our pointer memory is uniform and efficient. Our method achieves competitive or state-of-the-art performance on various tasks with low training costs.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2507.02863) | [🌐 Project Page](https://ykiwu.github.io/Point3R/) | | [💻 Code](https://github.com/YkiWu/Point3R)
+
+<br>
+
+
+
 
 
 ## 2024:
@@ -472,6 +488,19 @@ We introduce Geo4D, a method to repurpose video diffusion models for monocular 3
   [📄 Paper](https://arxiv.org/pdf/2504.05692) | [💻 Code](https://github.com/wyddmw/POMATO)
 
 <br>
+
+
+### 7. GeometryCrafter: Consistent Geometry Estimation for Open-world Videos with Diffusion Priors ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Tian-Xing Xu, Xiangjun Gao, Wenbo Hu, Xiaoyu Li, Song-Hai Zhang, Ying Shan
+<details span>
+<summary><b>Abstract</b></summary>
+Despite remarkable advancements in video depth estimation, existing methods exhibit inherent limitations in achieving geometric fidelity through the affine-invariant predictions, limiting their applicability in reconstruction and other metrically grounded downstream tasks. We propose GeometryCrafter, a novel framework that recovers high-fidelity point map sequences with temporal coherence from open-world videos, enabling accurate 3D/4D reconstruction, camera parameter estimation, and other depth-based applications. At the core of our approach lies a point map Variational Autoencoder (VAE) that learns a latent space agnostic to video latent distributions for effective point map encoding and decoding. Leveraging the VAE, we train a video diffusion model to model the distribution of point map sequences conditioned on the input videos. Extensive evaluations on diverse datasets demonstrate that GeometryCrafter achieves state-of-the-art 3D accuracy, temporal consistency, and generalization capability.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.01016) | [🌐 Project Page](https://geometrycrafter.github.io/) | | [💻 Code](https://github.com/TencentARC/GeometryCrafter) | [🤗 Demo](https://huggingface.co/spaces/TencentARC/GeometryCrafter)
+
+<br>
+
 
 
 
@@ -770,6 +799,23 @@ Foundation models have significantly reduced the need for task-specific training
   [📄 Paper]() | [💻 Code]()
 
 <br>
+
+
+
+## DUSt3R for Science:
+## 2025:
+### 1. CryoFastAR: Fast Cryo-EM Ab Initio Reconstruction Made Easy ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Jiakai Zhang, Shouchen Zhou, Haizhao Dai, Xinhang Liu, Peihao Wang, Zhiwen Fan, Yuan Pei, Jingyi Yu
+<details span>
+<summary><b>Abstract</b></summary>
+Pose estimation from unordered images is fundamental for 3D reconstruction, robotics, and scientific imaging. Recent geometric foundation models, such as DUSt3R, enable end-to-end dense 3D reconstruction but remain underexplored in scientific imaging fields like cryo-electron microscopy (cryo-EM) for near-atomic protein reconstruction. In cryo-EM, pose estimation and 3D reconstruction from unordered particle images still depend on time-consuming iterative optimization, primarily due to challenges such as low signal-to-noise ratios (SNR) and distortions from the contrast transfer function (CTF). We introduce CryoFastAR, the first geometric foundation model that can directly predict poses from Cryo-EM noisy images for Fast ab initio Reconstruction. By integrating multi-view features and training on large-scale simulated cryo-EM data with realistic noise and CTF modulations, CryoFastAR enhances pose estimation accuracy and generalization. To enhance training stability, we propose a progressive training strategy that first allows the model to extract essential features under simpler conditions before gradually increasing difficulty to improve robustness. Experiments show that CryoFastAR achieves comparable quality while significantly accelerating inference over traditional iterative approaches on both synthetic and real datasets.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2506.05864)
+
+<br>
+
+
 
 
 ## Related Codebase
