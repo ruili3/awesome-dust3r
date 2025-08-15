@@ -32,6 +32,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track.
+<br>
 **July 9, 2025**: Add Point3R, GeometryCrafter, CryoFastAR.
 <br>
 **June 19, 2025**: Add RaySt3R, Amodal3R, Styl3R.
@@ -332,6 +334,94 @@ Dense 3D scene reconstruction from an ordered sequence or unordered image collec
 
 
 
+### 11. MoGe-2: Accurate Monocular Geometry with Metric Scale and Sharp Details ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Ruicheng Wang, Sicheng Xu, Yue Dong, Yu Deng, Jianfeng Xiang, Zelong Lv, Guangzhong Sun, Xin Tong, Jiaolong Yang
+<details span>
+<summary><b>Abstract</b></summary>
+We propose MoGe-2, an advanced open-domain geometry estimation model that recovers a metric scale 3D point map of a scene from a single image. Our method builds upon the recent monocular geometry estimation approach, MoGe, which predicts affine-invariant point maps with unknown scales. We explore effective strategies to extend MoGe for metric geometry prediction without compromising the relative geometry accuracy provided by the affine-invariant point representation. Additionally, we discover that noise and errors in real data diminish fine-grained detail in the predicted geometry. We address this by developing a unified data refinement approach that filters and completes real data from different sources using sharp synthetic labels, significantly enhancing the granularity of the reconstructed geometry while maintaining the overall accuracy. We train our model on a large corpus of mixed datasets and conducted comprehensive evaluations, demonstrating its superior performance in achieving accurate relative geometry, precise metric scale, and fine-grained detail recovery -- capabilities that no previous methods have simultaneously achieved.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2507.02546) | [🌐 Project Page](https://wangrc.site/MoGe2Page/) | [💻 Code ](https://github.com/microsoft/moge) | [🤗 Demo](https://huggingface.co/spaces/Ruicheng/MoGe-2)
+
+<br>
+
+
+
+### 12. Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Chong Cheng, Sicheng Yu, Zijian Wang, Yifan Zhou, Hao Wang
+<details span>
+<summary><b>Abstract</b></summary>
+3D Gaussian Splatting (3DGS) has become a popular solution in SLAM due to its high-fidelity and real-time novel view synthesis performance. However, some previous 3DGS SLAM methods employ a differentiable rendering pipeline for tracking, lack geometric priors in outdoor scenes. Other approaches introduce separate tracking modules, but they accumulate errors with significant camera movement, leading to scale drift. To address these challenges, we propose a robust RGB-only outdoor 3DGS SLAM method: S3PO-GS. Technically, we establish a self-consistent tracking module anchored in the 3DGS pointmap, which avoids cumulative scale drift and achieves more precise and robust tracking with fewer iterations. Additionally, we design a patch-based pointmap dynamic mapping module, which introduces geometric priors while avoiding scale ambiguity. This significantly enhances tracking accuracy and the quality of scene reconstruction, making it particularly suitable for complex outdoor environments. Our experiments on the Waymo, KITTI, and DL3DV datasets demonstrate that S3PO-GS achieves state-of-the-art results in novel view synthesis and outperforms other 3DGS SLAM methods in tracking accuracy. Project page: this https URL.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2507.03737) | [🌐 Project Page](https://3dagentworld.github.io/S3PO-GS/) | [💻 Code ](https://github.com/3DAgentWorld/S3PO-GS)
+
+<br>
+
+
+
+### 13. π^3: Scalable Permutation-Equivariant Visual Geometry Learning ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Yifan Wang, Jianjun Zhou, Haoyi Zhu, Wenzheng Chang, Yang Zhou, Zizun Li, Junyi Chen, Jiangmiao Pang, Chunhua Shen, Tong He
+<details span>
+<summary><b>Abstract</b></summary>
+We introduce , a feed-forward neural network that offers a novel approach to visual geometry reconstruction, breaking the reliance on a conventional fixed reference view. Previous methods often anchor their reconstructions to a designated viewpoint, an inductive bias that can lead to instability and failures if the reference is suboptimal. In contrast,  employs a fully permutation-equivariant architecture to predict affine-invariant camera poses and scale-invariant local point maps without any reference frames. This design makes our model inherently robust to input ordering and highly scalable. These advantages enable our simple and bias-free approach to achieve state-of-the-art performance on a wide range of tasks, including camera pose estimation, monocular/video depth estimation, and dense point map reconstruction. Code and models are publicly available.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2507.13347) | [🌐 Project Page](https://yyfz.github.io/pi3/) | [💻 Code ](https://github.com/yyfz/Pi3) | [🤗 Demo](https://huggingface.co/spaces/yyfz233/Pi3)
+
+<br>
+
+
+
+### 14. LONG3R: Long Sequence Streaming 3D Reconstruction ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Zhuoguang Chen, Minghui Qin, Tianyuan Yuan, Zhe Liu, Hang Zhao
+<details span>
+<summary><b>Abstract</b></summary>
+Recent advancements in multi-view scene reconstruction have been significant, yet existing methods face limitations when processing streams of input images. These methods either rely on time-consuming offline optimization or are restricted to shorter sequences, hindering their applicability in real-time scenarios. In this work, we propose LONG3R (LOng sequence streaming 3D Reconstruction), a novel model designed for streaming multi-view 3D scene reconstruction over longer sequences. Our model achieves real-time processing by operating recurrently, maintaining and updating memory with each new observation. We first employ a memory gating mechanism to filter relevant memory, which, together with a new observation, is fed into a dual-source refined decoder for coarse-to-fine interaction. To effectively capture long-sequence memory, we propose a 3D spatio-temporal memory that dynamically prunes redundant spatial information while adaptively adjusting resolution along the scene. To enhance our model's performance on long sequences while maintaining training efficiency, we employ a two-stage curriculum training strategy, each stage targeting specific capabilities. Experiments demonstrate that LONG3R outperforms state-of-the-art streaming methods, particularly for longer sequences, while maintaining real-time inference speed.
+</details>
+
+  [📄 Paper](https://www.arxiv.org/pdf/2507.18255) | [🌐 Project Page](https://zgchen33.github.io/LONG3R/) | [💻 Code ](https://zgchen33.github.io/LONG3R/)
+
+<br>
+
+
+
+### 15. VGGT-Long: Chunk it, Loop it, Align it -- Pushing VGGT's Limits on Kilometer-scale Long RGB Sequences ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Kai Deng, Zexin Ti, Jiawei Xu, Jian Yang, Jin Xie
+<details span>
+<summary><b>Abstract</b></summary>
+Foundation models for 3D vision have recently demonstrated remarkable capabilities in 3D perception. However, extending these models to large-scale RGB stream 3D reconstruction remains challenging due to memory limitations. In this work, we propose VGGT-Long, a simple yet effective system that pushes the limits of monocular 3D reconstruction to kilometer-scale, unbounded outdoor environments. Our approach addresses the scalability bottlenecks of existing models through a chunk-based processing strategy combined with overlapping alignment and lightweight loop closure optimization. Without requiring camera calibration, depth supervision or model retraining, VGGT-Long achieves trajectory and reconstruction performance comparable to traditional methods. We evaluate our method on KITTI, Waymo, and Virtual KITTI datasets. VGGT-Long not only runs successfully on long RGB sequences where foundation models typically fail, but also produces accurate and consistent geometry across various conditions. Our results highlight the potential of leveraging foundation models for scalable monocular 3D scene in real-world settings, especially for autonomous driving scenarios.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2507.16443) | [💻 Code ](https://github.com/DengKaiCQ/VGGT-Long)
+
+<br>
+
+
+### 16. STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Yushi Lan, Yihang Luo, Fangzhou Hong, Shangchen Zhou, Honghua Chen, Zhaoyang Lyu, Shuai Yang, Bo Dai, Chen Change Loy, Xingang Pan
+<details span>
+<summary><b>Abstract</b></summary>
+We present STream3R, a novel approach to 3D reconstruction that reformulates pointmap prediction as a decoder-only Transformer problem. Existing state-of-the-art methods for multi-view reconstruction either depend on expensive global optimization or rely on simplistic memory mechanisms that scale poorly with sequence length. In contrast, STream3R introduces an streaming framework that processes image sequences efficiently using causal attention, inspired by advances in modern language modeling. By learning geometric priors from large-scale 3D datasets, STream3R generalizes well to diverse and challenging scenarios, including dynamic scenes where traditional methods often fail. Extensive experiments show that our method consistently outperforms prior work across both static and dynamic scene benchmarks. Moreover, STream3R is inherently compatible with LLM-style training infrastructure, enabling efficient large-scale pretraining and fine-tuning for various downstream 3D tasks. Our results underscore the potential of causal Transformer models for online 3D perception, paving the way for real-time 3D understanding in streaming environments.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2508.10893v1) | [🌐 Project Page](https://nirvanalan.github.io/projects/stream3r/)| [💻 Code ](https://github.com/NIRVANALAN/STream3R)
+
+<br>
+
+
+
+### 17. Dens3R: A Foundation Model for 3D Geometry Prediction ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Xianze Fang, Jingnan Gao, Zhe Wang, Zhuo Chen, Xingyu Ren, Jiangjing Lyu, Qiaomu Ren, Zhonglei Yang, Xiaokang Yang, Yichao Yan, Chengfei Lyu
+<details span>
+<summary><b>Abstract</b></summary>
+Recent advances in dense 3D reconstruction have led to significant progress, yet achieving accurate unified geometric prediction remains a major challenge. Most existing methods are limited to predicting a single geometry quantity from input images. However, geometric quantities such as depth, surface normals, and point maps are inherently correlated, and estimating them in isolation often fails to ensure consistency, thereby limiting both accuracy and practical applicability. This motivates us to explore a unified framework that explicitly models the structural coupling among different geometric properties to enable joint regression. In this paper, we present Dens3R, a 3D foundation model designed for joint geometric dense prediction and adaptable to a wide range of downstream tasks. Dens3R adopts a two-stage training framework to progressively build a pointmap representation that is both generalizable and intrinsically invariant. Specifically, we design a lightweight shared encoder-decoder backbone and introduce position-interpolated rotary positional encoding to maintain expressive power while enhancing robustness to high-resolution inputs. By integrating image-pair matching features with intrinsic invariance modeling, Dens3R accurately regresses multiple geometric quantities such as surface normals and depth, achieving consistent geometry perception from single-view to multi-view inputs. Additionally, we propose a post-processing pipeline that supports geometrically consistent multi-view inference. Extensive experiments demonstrate the superior performance of Dens3R across various dense 3D prediction tasks and highlight its potential for broader applications.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2507.16290) | [🌐 Project Page](https://g-1nonly.github.io/Dens3R/)| [💻 Code ](https://github.com/G-1nOnly/Dens3R)
+
+<br>
+
 
 
 ## 2024:
@@ -498,6 +588,30 @@ Despite remarkable advancements in video depth estimation, existing methods exhi
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2504.01016) | [🌐 Project Page](https://geometrycrafter.github.io/) | | [💻 Code](https://github.com/TencentARC/GeometryCrafter) | [🤗 Demo](https://huggingface.co/spaces/TencentARC/GeometryCrafter)
+
+<br>
+
+
+### 8. Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Weirong Chen, Ganlin Zhang, Felix Wimbauer, Rui Wang, Nikita Araslanov, Andrea Vedaldi, Daniel Cremers
+<details span>
+<summary><b>Abstract</b></summary>
+Traditional SLAM systems, which rely on bundle adjustment, struggle with highly dynamic scenes commonly found in casual videos. Such videos entangle the motion of dynamic elements, undermining the assumption of static environments required by traditional systems. Existing techniques either filter out dynamic elements or model their motion independently. However, the former often results in incomplete reconstructions, whereas the latter can lead to inconsistent motion estimates. Taking a novel approach, this work leverages a 3D point tracker to separate the camera-induced motion from the observed motion of dynamic objects. By considering only the camera-induced component, bundle adjustment can operate reliably on all scene elements as a result. We further ensure depth consistency across video frames with lightweight post-processing based on scale maps. Our framework combines the core of traditional SLAM -- bundle adjustment -- with a robust learning-based 3D tracker front-end. Integrating motion decomposition, bundle adjustment and depth refinement, our unified framework, BA-Track, accurately tracks the camera motion and produces temporally coherent and scale-consistent dense reconstructions, accommodating both static and dynamic elements. Our experiments on challenging datasets reveal significant improvements in camera pose estimation and 3D reconstruction accuracy.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2504.14516) | [🌐 Project Page](https://wrchen530.github.io/projects/batrack/) | | [💻 Code (coming soon)](https://wrchen530.github.io/projects/batrack/)
+
+<br>
+
+
+### 9. Streaming 4D Visual Geometry Transformer ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Dong Zhuo, Wenzhao Zheng, Jiahe Guo, Yuqi Wu, Jie Zhou, Jiwen Lu
+<details span>
+<summary><b>Abstract</b></summary>
+Perceiving and reconstructing 4D spatial-temporal geometry from videos is a fundamental yet challenging computer vision task. To facilitate interactive and real-time applications, we propose a streaming 4D visual geometry transformer that shares a similar philosophy with autoregressive large language models. We explore a simple and efficient design and employ a causal transformer architecture to process the input sequence in an online manner. We use temporal causal attention and cache the historical keys and values as implicit memory to enable efficient streaming long-term 4D reconstruction. This design can handle real-time 4D reconstruction by incrementally integrating historical information while maintaining high-quality spatial consistency. For efficient training, we propose to distill knowledge from the dense bidirectional visual geometry grounded transformer (VGGT) to our causal model. For inference, our model supports the migration of optimized efficient attention operator (e.g., FlashAttention) from the field of large language models. Extensive experiments on various 4D geometry perception benchmarks demonstrate that our model increases the inference speed in online scenarios while maintaining competitive performance, paving the way for scalable and interactive 4D vision systems.
+</details>
+
+  [📄 Paper](https://arxiv.org/abs/2507.11539) | [🌐 Project Page](https://wzzheng.net/StreamVGGT/) | | [💻 Code](https://github.com/wzzheng/StreamVGGT) | [🤗 Demo](https://huggingface.co/spaces/lch01/StreamVGGT)
 
 <br>
 
