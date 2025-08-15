@@ -32,7 +32,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track.
+**Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track, and ViPE.
 <br>
 **July 9, 2025**: Add Point3R, GeometryCrafter, CryoFastAR.
 <br>
@@ -422,6 +422,18 @@ Recent advances in dense 3D reconstruction have led to significant progress, yet
 
 <br>
 
+
+
+### 18. ViPE: Video Pose Engine for 3D Geometric Perception ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Jiahui Huang, Qunjie Zhou, Hesam Rabeti, Aleksandr Korovko, Huan Ling, Xuanchi Ren, Tianchang Shen, Jun Gao, Dmitry Slepichev, Chen-Hsuan Lin, Jiawei Ren, Kevin Xie, Joydeep Biswas, Laura Leal-Taixe, Sanja Fidler
+<details span>
+<summary><b>Abstract</b></summary>
+Accurate 3D geometric perception is an important prerequisite for a wide range of spatial AI systems. While state-of-the-art methods depend on large-scale training data, acquiring consistent and precise 3D annotations from in-the-wild videos remains a key challenge. In this work, we introduce ViPE, a handy and versatile video processing engine designed to bridge this gap. ViPE efficiently estimates camera intrinsics, camera motion, and dense, near-metric depth maps from unconstrained raw videos. It is robust to diverse scenarios, including dynamic selfie videos, cinematic shots, or dashcams, and supports various camera models such as pinhole, wide-angle, and 360° panoramas. We have benchmarked ViPE on multiple benchmarks. Notably, it outperforms existing uncalibrated pose estimation baselines by 18%/50% on TUM/KITTI sequences, and runs at 3-5FPS on a single GPU for standard input resolutions. We use ViPE to annotate a large-scale collection of videos. This collection includes around 100K real-world internet videos, 1M high-quality AI-generated videos, and 2K panoramic videos, totaling approximately 96M frames – all annotated with accurate camera poses and dense depth maps. We open-source ViPE and the annotated dataset with the hope of accelerating the development of spatial AI systems.
+</details>
+
+  [📄 Paper](https://research.nvidia.com/labs/toronto-ai/vipe/assets/paper.pdf) | [🌐 Project Page](https://research.nvidia.com/labs/toronto-ai/vipe/)| [💻 Code ](https://github.com/nv-tlabs/vipe?tab=readme-ov-file)
+
+<br>
 
 
 ## 2024:
