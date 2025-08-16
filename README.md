@@ -32,6 +32,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Aug 16, 2025**: Add Tst3R.
+<br>
 **Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track, and ViPE.
 <br>
 **July 9, 2025**: Add Point3R, GeometryCrafter, CryoFastAR.
@@ -434,6 +436,18 @@ Accurate 3D geometric perception is an important prerequisite for a wide range o
   [📄 Paper](https://research.nvidia.com/labs/toronto-ai/vipe/assets/paper.pdf) | [🌐 Project Page](https://research.nvidia.com/labs/toronto-ai/vipe/)| [💻 Code ](https://github.com/nv-tlabs/vipe?tab=readme-ov-file)
 
 <br>
+
+### 19. Test3R: Learning to Reconstruct 3D at Test Time ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Yuheng Yuan, Qiuhong Shen, Shizun Wang, Xingyi Yang, Xinchao Wang
+<details span>
+<summary><b>Abstract</b></summary>
+Dense matching methods like DUSt3R regress pairwise pointmaps for 3D reconstruction. However, the reliance on pairwise prediction and the limited generalization capability inherently restrict the global geometric consistency. In this work, we introduce \textbf{Test3R}, a surprisingly simple test-time learning technique that significantly boosts geometric accuracy. Using image triplets ($I_1,I_2,I_3$), Test3R generates reconstructions from pairs ($I_1,I_2$) and ($I_1,I_3$). The core idea is to optimize the network at test time via a self-supervised objective: maximizing the geometric consistency between these two reconstructions relative to the common image $I_1$. This ensures the model produces cross-pair consistent outputs, regardless of the inputs. Extensive experiments demonstrate that our technique significantly outperforms previous state-of-the-art methods on the 3D reconstruction and multi-view depth estimation tasks. Moreover, it is universally applicable and nearly cost-free, making it easily applied to other models and implemented with minimal test-time training overhead and parameter footprint.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2506.13750) | [🌐 Project Page](https://test3r-nop.github.io/)| [💻 Code ](https://github.com/nopQAQ/Test3R)
+
+<br>
+
 
 
 ## 2024:
