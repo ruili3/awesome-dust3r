@@ -32,7 +32,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Aug 16, 2025**: Add Tst3R.
+**Aug 16, 2025**: Add Test3R.
 <br>
 **Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track, and ViPE.
 <br>
