@@ -32,6 +32,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Sep 6, 2025**: Add SAIL-Recon, FastVGGT, HAMSt3R, Vista-SLAM.
+<br>
 **Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track, and ViPE.
 <br>
 **July 9, 2025**: Add Point3R, GeometryCrafter, CryoFastAR.
@@ -434,6 +436,61 @@ Accurate 3D geometric perception is an important prerequisite for a wide range o
   [📄 Paper](https://research.nvidia.com/labs/toronto-ai/vipe/assets/paper.pdf) | [🌐 Project Page](https://research.nvidia.com/labs/toronto-ai/vipe/)| [💻 Code ](https://github.com/nv-tlabs/vipe?tab=readme-ov-file)
 
 <br>
+
+
+
+### 19. SAIL-Recon: Large SfM by Augmenting Scene Regression with Localization ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Junyuan Deng, Heng Li, Tao Xie, Weiqiang Ren, Qian Zhang, Ping Tan, Xiaoyang Guo
+<details span>
+<summary><b>Abstract</b></summary>
+Scene regression methods, such as VGGT, solve the Structure-from-Motion (SfM) problem by directly regressing camera poses and 3D scene structures from input images. They demonstrate impressive performance in handling images under extreme viewpoint changes. However, these methods struggle to handle a large number of input images. To address this problem, we introduce SAIL-Recon, a feed-forward Transformer for large scale SfM, by augmenting the scene regression network with visual localization capabilities. Specifically, our method first computes a neural scene representation from a subset of anchor images. The regression network is then fine-tuned to reconstruct all input images conditioned on this neural scene representation. Comprehensive experiments show that our method not only scales efficiently to large-scale scenes, but also achieves state-of-the-art results on both camera pose estimation and novel view synthesis benchmarks, including TUM-RGBD, CO3Dv2, and Tanks & Temples. We will publish our model and code.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2508.17972) | [🌐 Project Page](https://hkust-sail.github.io/sail-recon/)| [💻 Code ](https://github.com/HKUST-SAIL/sail-recon)
+
+<br>
+
+
+### 20. FastVGGT: Training-Free Acceleration of Visual Geometry Transformer ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: You Shen, Zhipeng Zhang, Yansong Qu, Liujuan Cao
+<details span>
+<summary><b>Abstract</b></summary>
+Foundation models for 3D vision have recently demonstrated remarkable capabilities in 3D perception. However, scaling these models to long-sequence image inputs remains a significant challenge due to inference-time inefficiency. In this work, we present a detailed analysis of VGGT, a state-of-the-art feed-forward visual geometry model and identify its primary bottleneck. Visualization further reveals a token collapse phenomenon in the attention maps. Motivated by these findings, we explore the potential of token merging in the feed-forward visual geometry model. Owing to the unique architectural and task-specific properties of 3D models, directly applying existing merging techniques proves challenging. To this end, we propose FastVGGT, which, for the first time, leverages token merging in the 3D domain through a training-free mechanism for accelerating VGGT. we devise a unique token partitioning strategy tailored to 3D architectures and tasks, effectively eliminating redundant computation while preserving VGGT's powerful reconstruction capacity. Extensive experiments on multiple 3D geometry benchmarks validate the effectiveness of our approach. Notably, with 1000 input images, FastVGGT achieves a 4x speedup over VGGT while mitigating error accumulation in long-sequence scenarios. These findings underscore the potential of token merging as a principled solution for scalable 3D vision systems. 
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2509.02560v1) | [🌐 Project Page](https://mystorm16.github.io/fastvggt/)| [💻 Code ](https://github.com/mystorm16/FastVGGT)
+
+<br>
+
+
+### 21. HAMSt3R: Human-Aware Multi-view Stereo 3D Reconstruction ![](https://img.shields.io/badge/2025-ICCV-pink)
+**Authors**: Sara Rojas, Matthieu Armando, Bernard Ghamen, Philippe Weinzaepfel, Vincent Leroy, Gregory Rogez
+<details span>
+<summary><b>Abstract</b></summary>
+Recovering the 3D geometry of a scene from a sparse set of uncalibrated images is a long-standing problem in computer vision. While recent learning-based approaches such as DUSt3R and MASt3R have demonstrated impressive results by directly predicting dense scene geometry, they are primarily trained on outdoor scenes with static environments and struggle to handle human-centric scenarios. In this work, we introduce HAMSt3R, an extension of MASt3R for joint human and scene 3D reconstruction from sparse, uncalibrated multi-view images. First, we exploit DUNE, a strong image encoder obtained by distilling, among others, the encoders from MASt3R and from a state-of-the-art Human Mesh Recovery (HMR) model, multi-HMR, for a better understanding of scene geometry and human bodies. Our method then incorporates additional network heads to segment people, estimate dense correspondences via DensePose, and predict depth in human-centric environments, enabling a more comprehensive 3D reconstruction. By leveraging the outputs of our different heads, HAMSt3R produces a dense point map enriched with human semantic information in 3D. Unlike existing methods that rely on complex optimization pipelines, our approach is fully feed-forward and efficient, making it suitable for real-world applications. We evaluate our model on EgoHumans and EgoExo4D, two challenging benchmarks con taining diverse human-centric scenarios. Additionally, we validate its generalization to traditional multi-view stereo and multi-view pose regression tasks. Our results demonstrate that our method can reconstruct humans effectively while preserving strong performance in general 3D reconstruction tasks, bridging the gap between human and scene understanding in 3D vision.
+</details>
+
+  [📄 Paper](https://www.arxiv.org/pdf/2508.16433)
+
+<br>
+
+
+
+
+### 22. ViSTA-SLAM: Visual SLAM with Symmetric Two-view Association ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Ganlin Zhang, Shenhan Qian, Xi Wang, Daniel Cremers
+<details span>
+<summary><b>Abstract</b></summary>
+We present ViSTA-SLAM as a real-time monocular visual SLAM system that operates without requiring camera intrinsics, making it broadly applicable across diverse camera setups. At its core, the system employs a lightweight symmetric two-view association (STA) model as the frontend, which simultaneously estimates relative camera poses and regresses local pointmaps from only two RGB images. This design reduces model complexity significantly, the size of our frontend is only 35\% that of comparable state-of-the-art methods, while enhancing the quality of two-view constraints used in the pipeline. In the backend, we construct a specially designed Sim(3) pose graph that incorporates loop closures to address accumulated drift. Extensive experiments demonstrate that our approach achieves superior performance in both camera tracking and dense 3D reconstruction quality compared to current methods.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2509.01584) | [🌐 Project Page](https://ganlinzhang.xyz/vista-slam/)| [💻 Code ](https://github.com/zhangganlin/vista-slam)
+
+<br>
+
+
+
+
 
 
 ## 2024:
