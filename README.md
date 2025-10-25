@@ -32,7 +32,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R.
+**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R， PLANA3R, TTT3R.
 <br>
 **Sep 6, 2025**: Add SAIL-Recon, FastVGGT, HAMSt3R, Vista-SLAM.
 <br>
@@ -513,6 +513,31 @@ Estimating agent pose and 3D scene structure from multi-camera rigs is a central
 </details>
 
   [📄 Paper](https://arxiv.org/pdf/2506.02265) | [🌐 Project Page](https://wayve.ai/thinking/rig3r/)
+
+<br>
+
+
+
+### 25. PLANA3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Changkun Liu, Bin Tan, Zeran Ke, Shangzhan Zhang, Jiachen Liu, Ming Qian, Nan Xue, Yujun Shen, Tristan Braud
+<details span>
+<summary><b>Abstract</b></summary>
+This paper addresses metric 3D reconstruction of indoor scenes by exploiting their inherent geometric regularities with compact representations. Using planar 3D primitives - a well-suited representation for man-made environments - we introduce PLANA3R, a pose-free framework for metric Planar 3D Reconstruction from unposed two-view images. Our approach employs Vision Transformers to extract a set of sparse planar primitives, estimate relative camera poses, and supervise geometry learning via planar splatting, where gradients are propagated through high-resolution rendered depth and normal maps of primitives. Unlike prior feedforward methods that require 3D plane annotations during training, PLANA3R learns planar 3D structures without explicit plane supervision, enabling scalable training on large-scale stereo datasets using only depth and normal annotations. We validate PLANA3R on multiple indoor-scene datasets with metric supervision and demonstrate strong generalization to out-of-domain indoor environments across diverse tasks under metric evaluation protocols, including 3D surface reconstruction, depth estimation, and relative pose estimation. Furthermore, by formulating with planar 3D representation, our method emerges with the ability for accurate plane segmentation. 
+</details>
+
+  [📄 Paper](https://arxiv.org/abs/2510.18714) | [🌐 Project Page](https://lck666666.github.io/plana3r/)| [💻 Code ](https://github.com/lck666666/plana3r)
+
+<br>
+
+
+### 26. TTT3R: 3D Reconstruction as Test-Time Training ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Xingyu Chen, Yue Chen, Yuliang Xiu, Andreas Geiger, Anpei Chen
+<details span>
+<summary><b>Abstract</b></summary>
+Modern Recurrent Neural Networks have become a competitive architecture for 3D reconstruction due to their linear-time complexity. However, their performance degrades significantly when applied beyond the training context length, revealing limited length generalization. In this work, we revisit the 3D reconstruction foundation models from a Test-Time Training perspective, framing their designs as an online learning problem. Building on this perspective, we leverage the alignment confidence between the memory state and incoming observations to derive a closed-form learning rate for memory updates, to balance between retaining historical information and adapting to new observations. This training-free intervention, termed TTT3R, substantially improves length generalization, achieving a  improvement in global pose estimation over baselines, while operating at 20 FPS with just 6 GB of GPU memory to process thousands of images.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2509.26645) | [🌐 Project Page](https://rover-xingyu.github.io/TTT3R/)| [💻 Code ](rover-xingyu.github.io/TTT3R/)
 
 <br>
 
