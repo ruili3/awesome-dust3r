@@ -32,6 +32,8 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
+**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R.
+<br>
 **Sep 6, 2025**: Add SAIL-Recon, FastVGGT, HAMSt3R, Vista-SLAM.
 <br>
 **Aug 15, 2025**: Add MoGe-2, S3PO-GS, π^3, LONG3R， VGGT-Long, STream3R, Dens3R, StreamVGG-T, Back-on-Track, and ViPE.
@@ -489,9 +491,29 @@ We present ViSTA-SLAM as a real-time monocular visual SLAM system that operates 
 <br>
 
 
+### 23. Rig3R: Rig-Aware Conditioning for Learned 3D Reconstruction ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Samuel Li, Pujith Kachana, Prajwal Chidananda, Saurabh Nair, Yasutaka Furukawa, Matthew Brown
+<details span>
+<summary><b>Abstract</b></summary>
+Estimating agent pose and 3D scene structure from multi-camera rigs is a central task in embodied AI applications such as autonomous driving. Recent learned approaches such as DUSt3R have shown impressive performance in multiview settings. However, these models treat images as unstructured collections, limiting effectiveness in scenarios where frames are captured from synchronized rigs with known or inferable structure. To this end, we introduce Rig3R, a generalization of prior multiview reconstruction models that incorporates rig structure when available, and learns to infer it when not. Rig3R conditions on optional rig metadata including camera ID, time, and rig poses to develop a rig-aware latent space that remains robust to missing information. It jointly predicts pointmaps and two types of raymaps: a pose raymap relative to a global frame, and a rig raymap relative to a rig-centric frame consistent across time. Rig raymaps allow the model to infer rig structure directly from input images when metadata is missing. Rig3R achieves state-of-the-art performance in 3D reconstruction, camera pose estimation, and rig discovery, outperforming both traditional and learned methods by 17-45% mAA across diverse real-world rig datasets, all in a single forward pass without post-processing or iterative refinement.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2506.02265) | [🌐 Project Page](https://wayve.ai/thinking/rig3r/)
+
+<br>
 
 
 
+### 24. Human3R: Everyone Everywhere All at Once ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Yue Chen, Xingyu Chen, Yuxuan Xue, Anpei Chen, Yuliang Xiu, Gerard Pons-Moll
+<details span>
+<summary><b>Abstract</b></summary>
+We present Human3R, a unified, feed-forward framework for online 4D human-scene reconstruction, in the world frame, from casually captured monocular videos. Unlike previous approaches that rely on multi-stage pipelines, iterative contact-aware refinement between humans and scenes, and heavy dependencies, e.g., human detection, depth estimation, and SLAM pre-processing, Human3R jointly recovers global multi-person SMPL-X bodies ("everyone"), dense 3D scene ("everywhere"), and camera trajectories in a single forward pass ("all-at-once"). Our method builds upon the 4D online reconstruction model CUT3R, and uses parameter-efficient visual prompt tuning, to strive to preserve CUT3R's rich spatiotemporal priors, while enabling direct readout of multiple SMPL-X bodies. Human3R is a unified model that eliminates heavy dependencies and iterative refinement. After being trained on the relatively small-scale synthetic dataset BEDLAM for just one day on one GPU, it achieves superior performance with remarkable efficiency: it reconstructs multiple humans in a one-shot manner, along with 3D scenes, in one stage, at real-time speed (15 FPS) with a low memory footprint (8 GB). Extensive experiments demonstrate that Human3R delivers state-of-the-art or competitive performance across tasks, including global human motion estimation, local human mesh recovery, video depth estimation, and camera pose estimation, with a single unified model. We hope that Human3R will serve as a simple yet strong baseline, be easily adapted for downstream applications.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2510.06219) | [🌐 Project Page](https://fanegg.github.io/Human3R/)| [💻 Code ](https://github.com/fanegg/Human3R)
+
+<br>
 
 ## 2024:
 ### 1. Spurfies: Sparse Surface Reconstruction using Local Geometry Priors ![](https://img.shields.io/badge/2024-arXiv-red)
@@ -917,6 +939,18 @@ Recent advancements in 2D-to-3D perception have significantly improved the under
   [📄 Paper](https://arxiv.org/pdf/2503.07507) | [💻 Code](https://github.com/hujiecpp/PE3R)
 <br>
 <br>
+
+
+### 2. SegMASt3R: Geometry Grounded Segment Matching ![](https://img.shields.io/badge/2025-arXiv-red)
+**Authors**: Zhiwen Fan, Jian Zhang, Wenyan Cong, Peihao Wang, Renjie Li, Kairun Wen, Shijie Zhou, Achuta Kadambi, Zhangyang Wang, Danfei Xu, Boris Ivanovic, Marco Pavone, Yue Wang
+<details span>
+<summary><b>Abstract</b></summary>
+Segment matching is an important intermediate task in computer vision that establishes correspondences between semantically or geometrically coherent regions across images. Unlike keypoint matching, which focuses on localized features, segment matching captures structured regions, offering greater robustness to occlusions, lighting variations, and viewpoint changes. In this paper, we leverage the spatial understanding of 3D foundation models to tackle wide-baseline segment matching, a challenging setting involving extreme viewpoint shifts. We propose an architecture that uses the inductive bias of these 3D foundation models to match segments across image pairs with up to 180 degree view-point change. Extensive experiments show that our approach outperforms state-of-the-art methods, including the SAM2 video propagator and local feature matching methods, by upto 30% on the AUPRC metric, on ScanNet++ and Replica datasets. We further demonstrate benefits of the proposed model on relevant downstream tasks, including 3D instance segmentation and image-goal navigation.
+</details>
+
+  [📄 Paper](https://arxiv.org/pdf/2510.05051) | [🌐 Project Page](https://segmast3r.github.io/) | [💻 Code](https://github.com/SegMASt3R)
+
+
 
 
 ## 2024:
