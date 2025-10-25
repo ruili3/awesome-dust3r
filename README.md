@@ -32,7 +32,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R， PLANA3R, TTT3R.
+**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R，PLANA3R, TTT3R.
 <br>
 **Sep 6, 2025**: Add SAIL-Recon, FastVGGT, HAMSt3R, Vista-SLAM.
 <br>
