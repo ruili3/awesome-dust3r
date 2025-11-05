@@ -32,7 +32,7 @@ A curated list of papers and open-source resources related to DUSt3R/MASt3R, the
 <details span>
 <summary><b>Update Log:</b></summary>
 
-**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R，PLANA3R, TTT3R.
+**Oct 25, 2025**: Add Human3R, Rig3R, SegMASt3R, PLANA3R, TTT3R.
 <br>
 **Sep 6, 2025**: Add SAIL-Recon, FastVGGT, HAMSt3R, Vista-SLAM.
 <br>
@@ -981,8 +981,8 @@ Recent advancements in 2D-to-3D perception have significantly improved the under
 <br>
 
 
-### 2. SegMASt3R: Geometry Grounded Segment Matching ![](https://img.shields.io/badge/2025-arXiv-red)
-**Authors**: Zhiwen Fan, Jian Zhang, Wenyan Cong, Peihao Wang, Renjie Li, Kairun Wen, Shijie Zhou, Achuta Kadambi, Zhangyang Wang, Danfei Xu, Boris Ivanovic, Marco Pavone, Yue Wang
+### 2. SegMASt3R: Geometry Grounded Segment Matching ![](https://img.shields.io/badge/2025-Neurips-blue)
+**Authors**: Rohit Jayanti, Swayam Agrawal, Vansh Garg, Siddharth Tourani, Muhammad Haris Khan, Sourav Garg, Madhava Krishna
 <details span>
 <summary><b>Abstract</b></summary>
 Segment matching is an important intermediate task in computer vision that establishes correspondences between semantically or geometrically coherent regions across images. Unlike keypoint matching, which focuses on localized features, segment matching captures structured regions, offering greater robustness to occlusions, lighting variations, and viewpoint changes. In this paper, we leverage the spatial understanding of 3D foundation models to tackle wide-baseline segment matching, a challenging setting involving extreme viewpoint shifts. We propose an architecture that uses the inductive bias of these 3D foundation models to match segments across image pairs with up to 180 degree view-point change. Extensive experiments show that our approach outperforms state-of-the-art methods, including the SAM2 video propagator and local feature matching methods, by upto 30% on the AUPRC metric, on ScanNet++ and Replica datasets. We further demonstrate benefits of the proposed model on relevant downstream tasks, including 3D instance segmentation and image-goal navigation.
